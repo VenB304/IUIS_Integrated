@@ -21,4 +21,13 @@
     <ProjectReference Include="..\Modules\IUIS.Modules.Team6\IUIS.Modules.Team6.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Forms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Update="Forms\GlobalDashboardForm.Designer.cs">
+      <DependentUpon>GlobalDashboardForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
 </Project>

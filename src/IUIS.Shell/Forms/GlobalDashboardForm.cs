@@ -12,14 +12,11 @@ namespace IUIS.Shell.Forms
     /// <see cref="ModuleRegistry"/> and talks only to <see cref="IModule"/>.
     /// Adding a ninth module requires no change here.
     /// </summary>
-    public sealed class GlobalDashboardForm : Form
+    public partial class GlobalDashboardForm : Form
     {
-        private readonly UserSession    _session;
-        private readonly ModuleRegistry _registry;
-
-        private readonly System.Windows.Forms.Timer _clockTimer = new() { Interval = 1000 };
-        private readonly Label           _lblClock  = new();
-        private readonly FlowLayoutPanel _cardsPanel = new();
+        /// <summary>Null only when the Visual Studio Designer hosts this form.</summary>
+        private readonly UserSession?    _session;
+        private readonly ModuleRegistry? _registry;
 
         /// <summary>
         /// True when the user pressed Log Out rather than closing the window.
@@ -27,18 +24,21 @@ namespace IUIS.Shell.Forms
         /// </summary>
         public bool LogoutRequested { get; private set; }
 
-        public GlobalDashboardForm(UserSession session, ModuleRegistry registry)
+        /// <summary>Parameterless constructor so the Visual Studio Designer can host this form.</summary>
+        public GlobalDashboardForm() : this(null, null)
         {
-            _session  = session  ?? throw new ArgumentNullException(nameof(session));
-            _registry = registry ?? throw new ArgumentNullException(nameof(registry));
+        }
 
-            Text          = "Batangas State University — IUIS Dashboard";
-            Size          = new Size(1000, 700);
-            MinimumSize   = new Size(720, 520);
-            StartPosition = FormStartPosition.CenterScreen;
-            BackColor     = BsuTheme.PageBackground;
+        public GlobalDashboardForm(UserSession? session, ModuleRegistry? registry)
+        {
+            _session  = session;
+            _registry = registry;
 
-            BuildUI();
+            InitializeComponent();
+
+            if (_session != null)
+                _lblWelcome.Text = $"Welcome, {_session.Username} ({_session.Role})";
+
             RenderCards();
 
             _clockTimer.Tick += (s, e) => _lblClock.Text = FormatNow();
@@ -48,124 +48,30 @@ namespace IUIS.Shell.Forms
         protected override void OnFormClosed(FormClosedEventArgs e)
         {
             _clockTimer.Stop();
-            _clockTimer.Dispose();
             base.OnFormClosed(e);
         }
 
         private static string FormatNow() =>
             DateTime.Now.ToString("dddd, MMMM dd, yyyy  •  hh:mm:ss tt");
 
-        // ── Layout ────────────────────────────────────────────────────────
-
-        private void BuildUI()
-        {
-            var header = BuildHeader();
-
-            _cardsPanel.Dock       = DockStyle.Fill;
-            _cardsPanel.Padding    = new Padding(35);
-            _cardsPanel.AutoScroll = true;
-
-            // Fill is added before Top so it occupies the remaining space
-            // correctly — WinForms docks in reverse z-order.
-            Controls.Add(_cardsPanel);
-            Controls.Add(header);
-        }
-
-        private Panel BuildHeader()
-        {
-            var header = new Panel
-            {
-                Dock      = DockStyle.Top,
-                Height    = 100,
-                BackColor = BsuTheme.DarkRed
-            };
-
-            var lblTitle = new Label
-            {
-                Text      = "Batangas State University — IUIS",
-                Font      = BsuTheme.Title,
-                ForeColor = Color.White,
-                AutoSize  = true,
-                Location  = new Point(25, 20)
-            };
-
-            _lblClock.Text      = FormatNow();
-            _lblClock.Font      = BsuTheme.Body;
-            _lblClock.ForeColor = Color.FromArgb(220, 220, 220);
-            _lblClock.AutoSize  = true;
-            _lblClock.Location  = new Point(30, 60);
-
-            var lblUser = new Label
-            {
-                Text      = $"Welcome, {_session.Username} ({_session.Role})",
-                Font      = new Font("Segoe UI", 12F),
-                ForeColor = BsuTheme.Gold,
-                AutoSize  = true,
-                Margin    = new Padding(0, 6, 12, 0)
-            };
-
-            var btnLogout = new Button
-            {
-                Text   = "Log Out",
-                Font   = new Font("Segoe UI Semibold", 9F, FontStyle.Bold),
-                Size   = new Size(80, 30),
-                Margin = new Padding(0)
-            };
-            BsuTheme.StyleAsOutlined(btnLogout);
-            btnLogout.Click += (s, e) =>
-            {
-                LogoutRequested = true;
-                Close();
-            };
-
-            var btnRefresh = new Button
-            {
-                Text   = "Refresh",
-                Font   = new Font("Segoe UI Semibold", 9F, FontStyle.Bold),
-                Size   = new Size(80, 30),
-                Margin = new Padding(0, 0, 10, 0)
-            };
-            BsuTheme.StyleAsOutlined(btnRefresh);
-            // During integration week a teammate may build their .exe while the
-            // dashboard is already open; this re-checks availability without a restart.
-            btnRefresh.Click += (s, e) => RenderCards();
-
-            // Docking right (rather than setting Left by hand) keeps this pinned
-            // correctly as the window resizes, with no Resize handler needed.
-            var rightPanel = new FlowLayoutPanel
-            {
-                Dock          = DockStyle.Right,
-                FlowDirection = FlowDirection.RightToLeft,
-                WrapContents  = false,
-                AutoSize      = true,
-                AutoSizeMode  = AutoSizeMode.GrowAndShrink,
-                Padding       = new Padding(0, 33, 25, 0),
-                BackColor     = Color.Transparent
-            };
-            // In RightToLeft flow the first control added sits furthest right.
-            rightPanel.Controls.Add(btnLogout);
-            rightPanel.Controls.Add(btnRefresh);
-            rightPanel.Controls.Add(lblUser);
-
-            header.Controls.Add(rightPanel);
-            header.Controls.Add(lblTitle);
-            header.Controls.Add(_lblClock);
-
-            return header;
-        }
-
         // ── Cards ─────────────────────────────────────────────────────────
 
         /// <summary>Rebuilds every card from the registry, re-checking availability.</summary>
         private void RenderCards()
         {
+            if (_registry is null || _session is null)
+                return;
+
+            var registry = _registry;
+            var session   = _session;
+
             _cardsPanel.SuspendLayout();
 
             foreach (Control existing in _cardsPanel.Controls)
                 existing.Dispose();
             _cardsPanel.Controls.Clear();
 
-            foreach (var module in _registry.GetAccessible(_session))
+            foreach (var module in registry.GetAccessible(session))
                 _cardsPanel.Controls.Add(CreateModuleCard(module));
 
             _cardsPanel.ResumeLayout();
@@ -274,6 +180,9 @@ namespace IUIS.Shell.Forms
 
         private void LaunchModule(IModule module)
         {
+            if (_session is null)
+                return;
+
             try
             {
                 UseWaitCursor = true;
@@ -296,5 +205,17 @@ namespace IUIS.Shell.Forms
                 UseWaitCursor = false;
             }
         }
+
+        // ── Header button handlers ───────────────────────────────────────
+
+        private void BtnLogout_Click(object? sender, EventArgs e)
+        {
+            LogoutRequested = true;
+            Close();
+        }
+
+        // During integration week a teammate may build their .exe while the
+        // dashboard is already open; this re-checks availability without a restart.
+        private void BtnRefresh_Click(object? sender, EventArgs e) => RenderCards();
     }
 }
