@@ -1,6 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <!--
+      WinExe, not Library, so this module runs on its own (F5 straight into the
+      module, no dashboard) while IUIS.Shell still references it and loads it
+      in-process. .NET allows referencing an executable project: the shell uses
+      our types, and our Main is simply never called.
+
+      This is also why converting a team costs almost nothing — they keep their
+      existing WinExe project and just add a TeamNModule class.
+    -->
+    <OutputType>WinExe</OutputType>
     <TargetFramework>net10.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>

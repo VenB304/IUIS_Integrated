@@ -66,10 +66,11 @@ namespace IUIS.Modules.Team6.Forms
                 statusBarLabel.ForeColor = SystemColors.ControlText;
             };
 
-            // Show who is signed in, so it is obvious the session carried over
-            // from the dashboard rather than being asked for again.
-            if (_session is not null)
-                Text = $"{Text} — signed in as {_session.Username} ({_session.Role})";
+            // Make the launch context obvious at a glance: either the session
+            // carried over from the dashboard, or this is a standalone dev run.
+            Text = _session is not null
+                ? $"{Text} — signed in as {_session.Username} ({_session.Role})"
+                : $"{Text} — standalone (no login)";
         }
 
         protected override async void OnLoad(EventArgs e)
