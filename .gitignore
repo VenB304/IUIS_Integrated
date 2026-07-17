@@ -1,0 +1,43 @@
+## ─────────────────────────────────────────────────────────────
+##  SECRETS — never commit these.
+##  firebase.local.json holds the service-account password, which
+##  grants write access to the shared database.
+## ─────────────────────────────────────────────────────────────
+firebase.local.json
+**/firebase.local.json
+*.local.json
+!*.example.json
+
+## Visual Studio temporary files, builds, and metadata
+.vs/
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa]rm/
+[Aa]rm64/
+bld/
+[Ll]og/
+[Ll]ogs/
+artifacts/
+
+## NuGet
+*.nupkg
+packages/
+!packages/build/
+
+## OS-generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store

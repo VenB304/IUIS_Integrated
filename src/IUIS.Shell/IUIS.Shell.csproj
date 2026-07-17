@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>IUIS.Shell</RootNamespace>
+    <AssemblyName>IUIS</AssemblyName>
+    <ApplicationIcon />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IUIS.Core\IUIS.Core.csproj" />
+
+    <!--
+      One line per in-process module. As each team converts their project to a
+      class library, add their reference here and register them in ModuleCatalog.
+    -->
+    <ProjectReference Include="..\Modules\IUIS.Modules.Team6\IUIS.Modules.Team6.csproj" />
+  </ItemGroup>
+
+</Project>

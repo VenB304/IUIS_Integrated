@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>IUIS.Core</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FirebaseDatabase.net" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Committed template. Safe to share: contains placeholders only. -->
+    <None Update="Configuration\firebase.example.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </None>
+    <!-- Real credentials. Git-ignored; copied next to the .exe so the app can read it. -->
+    <None Update="Configuration\firebase.local.json"
+          Condition="Exists('Configuration\firebase.local.json')">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>firebase.local.json</Link>
+    </None>
+  </ItemGroup>
+
+</Project>

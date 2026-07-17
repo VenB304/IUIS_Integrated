@@ -1,0 +1,9 @@
+{
+  "//": "Template. Copy this file to 'firebase.local.json' and fill in real values.",
+  "//2": "firebase.local.json is git-ignored — never commit real credentials.",
+
+  "DatabaseUrl": "https://YOUR-PROJECT-default-rtdb.REGION.firebasedatabase.app/",
+  "WebApiKey": "YOUR_WEB_API_KEY",
+  "ServiceEmail": "YourTeam@example.com",
+  "ServicePassword": "YOUR_SERVICE_ACCOUNT_PASSWORD"
+}
