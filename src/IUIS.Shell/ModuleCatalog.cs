@@ -1,14 +1,15 @@
 using IUIS.Core.Modules;
 using IUIS.Modules.Team6;
+using IUIS.Modules.Team8;
 
 namespace IUIS.Shell
 {
     /// <summary>
     /// Declares which modules the dashboard offers.
     ///
-    /// This is the single place the integration is wired up. Team 6 is loaded
-    /// in-process; the other seven are still standalone executables and get an
-    /// <see cref="ExternalProcessModule"/> shim until they convert.
+    /// This is the single place the integration is wired up. Teams 6 and 8 are
+    /// loaded in-process; the other six are still standalone executables and get
+    /// an <see cref="ExternalProcessModule"/> shim until they convert.
     ///
     /// To promote a team once their module is a class library:
     ///   1. add a ProjectReference in IUIS.Shell.csproj
@@ -38,8 +39,9 @@ namespace IUIS.Shell
 
                 .Register(ExternalTeam(7, "Medical Services",
                     "Manage medical records and clearances", "⚕️"))
-                .Register(ExternalTeam(8, "Enrollment Management",
-                    "Manage student enrollment and tuition assessment", "📝"));
+
+                // Team 8 — converted to an in-process module.
+                .Register(new Team8Module());
 
             return registry;
         }

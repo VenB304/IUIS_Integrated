@@ -19,6 +19,7 @@
       class library, add their reference here and register them in ModuleCatalog.
     -->
     <ProjectReference Include="..\Modules\IUIS.Modules.Team6\IUIS.Modules.Team6.csproj" />
+    <ProjectReference Include="..\Modules\IUIS.Modules.Team8\IUIS.Modules.Team8.csproj" />
   </ItemGroup>
 
   <ItemGroup>
