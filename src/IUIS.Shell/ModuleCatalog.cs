@@ -11,9 +11,13 @@ namespace IUIS.Shell
     /// loaded in-process; the other six are still standalone executables and get
     /// an <see cref="ExternalProcessModule"/> shim until they convert.
     ///
-    /// To promote a team once their module is a class library:
+    /// Teams 4 and 5 use custom exe resolution because their repo folder names
+    /// and output exe names differ from the Final_Project_Team_N convention.
+    /// Their cards become active automatically once they build their project —
+    /// no changes here are required. When they are ready to promote to
+    /// in-process:
     ///   1. add a ProjectReference in IUIS.Shell.csproj
-    ///   2. swap their ExternalTeam(...) line below for `new TeamNModule()`
+    ///   2. swap their ExternalTeamNamed(...) line below for `new TeamNModule()`
     /// Nothing else in the shell changes.
     /// </summary>
     public static class ModuleCatalog
@@ -29,10 +33,19 @@ namespace IUIS.Shell
                     "Manage faculty information and subject assignments", "👨‍🏫"))
                 .Register(ExternalTeam(3, "Academic Management",
                     "Manage programs, courses, subjects, and curriculum", "📖"))
-                .Register(ExternalTeam(4, "Registrar Management",
-                    "Manage academic records and student clearances", "🏛️"))
-                .Register(ExternalTeam(5, "Library Management",
-                    "Manage book inventory and borrowing history", "📚"))
+                // Team 4 — repo: RegistrarManagement, exe: RegistrarManagement.exe
+                .Register(ExternalTeamNamed(4, "Registrar Management",
+                    "Manage academic records and student clearances", "🏛️",
+                    repoFolder: "RegistrarManagement",
+                    exeName:    "RegistrarManagement.exe",
+                    framework:  "net8.0-windows"))
+
+                // Team 5 — repo: library-management-module, exe: LibraryManagementSystem.exe
+                .Register(ExternalTeamNamed(5, "Library Management",
+                    "Manage book inventory and borrowing history", "📚",
+                    repoFolder: "library-management-module",
+                    exeName:    "LibraryManagementSystem.exe",
+                    framework:  "net8.0-windows"))
 
                 // Team 6 — the reference in-process module.
                 .Register(new Team6Module())
@@ -59,6 +72,31 @@ namespace IUIS.Shell
                 Order:       teamNumber);
 
             return new ExternalProcessModule(descriptor, ResolveTeamExe(teamNumber));
+        }
+
+        /// <summary>
+        /// Builds a shim for a team whose repo folder or exe name does not follow
+        /// the Final_Project_Team_N convention.
+        /// </summary>
+        private static ExternalProcessModule ExternalTeamNamed(
+            int    teamNumber,
+            string displayName,
+            string description,
+            string icon,
+            string repoFolder,
+            string exeName,
+            string framework = "net10.0-windows")
+        {
+            var descriptor = new ModuleDescriptor(
+                ModuleId:    $"team{teamNumber}.external",
+                Team:        $"Team {teamNumber}",
+                DisplayName: displayName,
+                Description: description,
+                Icon:        icon,
+                Order:       teamNumber);
+
+            return new ExternalProcessModule(descriptor,
+                ResolveNamedExe(repoFolder, exeName, framework));
         }
 
         /// <summary>
@@ -96,6 +134,39 @@ namespace IUIS.Shell
             // Not built yet. Return the most likely path anyway so the module
             // reports a useful "expected it here" message instead of blank.
             return Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", "..", "..", shapes[1]);
+        }
+
+        /// <summary>
+        /// Finds a team's built executable when their repo folder and exe name
+        /// do not follow the Final_Project_Team_N naming convention.
+        /// </summary>
+        private static string ResolveNamedExe(string repoFolder, string exeName, string framework)
+        {
+            // Three layouts checked in order:
+            //   1. Git submodule: modules/<repoFolder>/bin/...  (checked first — the canonical location)
+            //   2. Sibling clone: <repoFolder>/bin/...          (someone cloned next to IUIS_Integrated)
+            //   3. Nested clone:  <repoFolder>/<repoFolder>/bin/...
+            string[] shapes =
+            [
+                Path.Combine("modules", repoFolder, "bin", "Debug", framework, exeName),
+                Path.Combine(repoFolder, "bin", "Debug", framework, exeName),
+                Path.Combine(repoFolder, repoFolder, "bin", "Debug", framework, exeName)
+            ];
+
+            var dir = new DirectoryInfo(AppContext.BaseDirectory);
+            while (dir is not null)
+            {
+                foreach (var shape in shapes)
+                {
+                    var candidate = Path.Combine(dir.FullName, shape);
+                    if (File.Exists(candidate)) return candidate;
+                }
+
+                dir = dir.Parent;
+            }
+
+            // Not built yet — return a descriptive fallback path.
+            return Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "..", "..", "..", shapes[0]);
         }
     }
 }
