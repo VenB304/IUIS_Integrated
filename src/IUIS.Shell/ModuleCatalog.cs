@@ -34,8 +34,13 @@ namespace IUIS.Shell
                     exeName:      "Team1_Final_Project.exe",
                     framework:    "net10.0-windows",
                     nestedFolder: "Team1_Final_Project"))
-                .Register(ExternalTeam(2, "Teacher Management",
-                    "Manage faculty information and subject assignments", "👨‍🏫"))
+                // Team 2 — private repo: Team2_Teacher_Management, .NET Framework 4.8 (no TFM subfolder)
+                .Register(ExternalTeamNamed(2, "Teacher Management",
+                    "Manage faculty information and subject assignments", "👨‍🏫",
+                    repoFolder:        "Team2_Teacher_Management",
+                    exeName:           "Teacher_Management.exe",
+                    nestedFolder:      "Teacher_Management",
+                    frameworkSubfolder: false))
                 .Register(ExternalTeam(3, "Academic Management",
                     "Manage programs, courses, subjects, and curriculum", "📖"))
                 // Team 4 — repo: RegistrarManagement, exe: RegistrarManagement.exe
@@ -90,8 +95,9 @@ namespace IUIS.Shell
             string icon,
             string repoFolder,
             string exeName,
-            string framework    = "net10.0-windows",
-            string? nestedFolder = null)
+            string  framework         = "net10.0-windows",
+            string? nestedFolder      = null,
+            bool    frameworkSubfolder = true)
         {
             var descriptor = new ModuleDescriptor(
                 ModuleId:    $"team{teamNumber}.external",
@@ -102,7 +108,7 @@ namespace IUIS.Shell
                 Order:       teamNumber);
 
             return new ExternalProcessModule(descriptor,
-                ResolveNamedExe(repoFolder, exeName, framework, nestedFolder));
+                ResolveNamedExe(repoFolder, exeName, framework, nestedFolder, frameworkSubfolder));
         }
 
         /// <summary>
@@ -150,12 +156,19 @@ namespace IUIS.Shell
             string  repoFolder,
             string  exeName,
             string  framework,
-            string? nestedFolder = null)
+            string? nestedFolder       = null,
+            bool    frameworkSubfolder = true)
         {
-            // Build the bin path segment — either directly in repo root or in a named subfolder.
-            var binSegment = nestedFolder is null
-                ? Path.Combine("bin", "Debug", framework, exeName)
-                : Path.Combine(nestedFolder, "bin", "Debug", framework, exeName);
+            // Build the bin path segment.
+            // SDK-style projects (.NET 6+):        [nested/]bin/Debug/<tfm>/<exe>
+            // Legacy .csproj (.NET Framework):     [nested/]bin/Debug/<exe>  (no TFM folder)
+            var binSegment = (nestedFolder, frameworkSubfolder) switch
+            {
+                (null,   true)  => Path.Combine("bin", "Debug", framework, exeName),
+                (null,   false) => Path.Combine("bin", "Debug", exeName),
+                ({ } nf, true)  => Path.Combine(nf,   "bin", "Debug", framework, exeName),
+                ({ } nf, false) => Path.Combine(nf,   "bin", "Debug", exeName),
+            };
 
             // Three layouts checked in order:
             //   1. Git submodule: modules/<repoFolder>/[nested/]bin/...  (canonical)

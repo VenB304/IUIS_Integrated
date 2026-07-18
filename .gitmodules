@@ -7,3 +7,6 @@
 [submodule "modules/Team1_StudentManagementModule"]
 	path = modules/Team1_StudentManagementModule
 	url = https://github.com/Chiharu19/Team1_StudentManagementModule
+[submodule "modules/Team2_Teacher_Management"]
+	path = modules/Team2_Teacher_Management
+	url = https://github.com/jomar999/Team2_Teacher_Management
