@@ -40,8 +40,10 @@ namespace IUIS.Shell.Forms
             _lblHeaderTitle = new Label();
             _lblClock = new Label();
             _cardsPanel = new FlowLayoutPanel();
+            _picLogo = new PictureBox();
             _header.SuspendLayout();
             _rightPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)_picLogo).BeginInit();
             SuspendLayout();
             // 
             // _clockTimer
@@ -54,6 +56,7 @@ namespace IUIS.Shell.Forms
             _header.Controls.Add(_rightPanel);
             _header.Controls.Add(_lblHeaderTitle);
             _header.Controls.Add(_lblClock);
+            _header.Controls.Add(_picLogo);
             _header.Dock = DockStyle.Top;
             _header.Location = new Point(0, 0);
             _header.Name = "_header";
@@ -111,26 +114,37 @@ namespace IUIS.Shell.Forms
             _lblWelcome.TabIndex = 2;
             // 
             // _lblHeaderTitle
-            // 
+            //
             _lblHeaderTitle.AutoSize = true;
             _lblHeaderTitle.Font = new Font("Segoe UI Semibold", 22F, FontStyle.Bold);
             _lblHeaderTitle.ForeColor = Color.White;
-            _lblHeaderTitle.Location = new Point(25, 20);
+            _lblHeaderTitle.Location = new Point(105, 20);
             _lblHeaderTitle.Name = "_lblHeaderTitle";
             _lblHeaderTitle.Size = new Size(466, 41);
             _lblHeaderTitle.TabIndex = 1;
             _lblHeaderTitle.Text = "Batangas State University — IUIS";
-            // 
+            //
             // _lblClock
-            // 
+            //
             _lblClock.AutoSize = true;
             _lblClock.Font = new Font("Segoe UI", 10F);
             _lblClock.ForeColor = Color.FromArgb(220, 220, 220);
-            _lblClock.Location = new Point(30, 60);
+            _lblClock.Location = new Point(110, 60);
             _lblClock.Name = "_lblClock";
             _lblClock.Size = new Size(0, 19);
             _lblClock.TabIndex = 2;
-            // 
+            //
+            // _picLogo
+            //
+            _picLogo.BackColor = Color.Transparent;
+            _picLogo.Image = IUIS.Shell.Assets.AppLogo.Load();
+            _picLogo.Location = new Point(25, 18);
+            _picLogo.Name = "_picLogo";
+            _picLogo.Size = new Size(64, 64);
+            _picLogo.SizeMode = PictureBoxSizeMode.Zoom;
+            _picLogo.TabIndex = 3;
+            _picLogo.TabStop = false;
+            //
             // _cardsPanel
             // 
             _cardsPanel.AutoScroll = true;
@@ -154,6 +168,7 @@ namespace IUIS.Shell.Forms
             _header.PerformLayout();
             _rightPanel.ResumeLayout(false);
             _rightPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)_picLogo).EndInit();
             ResumeLayout(false);
         }
 
@@ -168,5 +183,6 @@ namespace IUIS.Shell.Forms
         private Label _lblHeaderTitle;
         private Label _lblClock;
         private FlowLayoutPanel _cardsPanel;
+        private PictureBox _picLogo;
     }
 }

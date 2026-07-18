@@ -30,4 +30,10 @@
     </Compile>
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\bsu-logo.png">
+      <LogicalName>IUIS.Shell.Assets.bsu-logo.png</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>
