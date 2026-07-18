@@ -37,4 +37,44 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <!--
+    Build external team modules before the shell.
+    Each task uses ContinueOnError="true" so a broken team build never
+    prevents the shell from launching — their dashboard card just stays grey.
+    SDK-style projects (.NET 6+) use "dotnet build".
+    Legacy .NET Framework projects use "dotnet msbuild /t:Restore;Build"
+    which also restores packages.config NuGet packages.
+  -->
+  <Target Name="BuildExternalModules" BeforeTargets="Build">
+
+    <Message Text="[IUIS] Building Team 1 — Student Management..." Importance="high" />
+    <Exec
+      Command="dotnet build &quot;$(MSBuildThisFileDirectory)..\..\modules\Team1_StudentManagementModule\Team1_Final_Project\Team1_Final_Project.csproj&quot; --configuration $(Configuration) --verbosity quiet"
+      ContinueOnError="true" />
+
+    <Message Text="[IUIS] Skipping Team 2 — Teacher Management auto-build." Importance="high" />
+    <Warning Text="Team 2 (Teacher_Management) uses .NET Framework 4.8 with packages.config which requires nuget.exe for restore. Open modules\Team2_Teacher_Management\Teacher_Management.sln in Visual Studio once to restore packages, then build. After that the dashboard card will activate automatically." />
+
+    <Message Text="[IUIS] Building Team 4 — Registrar Management..." Importance="high" />
+    <Exec
+      Command="dotnet build &quot;$(MSBuildThisFileDirectory)..\..\modules\RegistrarManagement\RegistrarManagement.csproj&quot; --configuration $(Configuration) --verbosity quiet"
+      ContinueOnError="true" />
+
+    <Message Text="[IUIS] Building Team 5 — Library Management..." Importance="high" />
+    <Copy
+      SourceFiles="$(MSBuildThisFileDirectory)..\..\modules\library-management-module\Configurations\service-account.example.json"
+      DestinationFiles="$(MSBuildThisFileDirectory)..\..\modules\library-management-module\Configurations\service-account.json"
+      Condition="!Exists('$(MSBuildThisFileDirectory)..\..\modules\library-management-module\Configurations\service-account.json')"
+      ContinueOnError="true" />
+    <Copy
+      SourceFiles="$(MSBuildThisFileDirectory)..\..\modules\library-management-module\Configurations\service-account.example.json"
+      DestinationFiles="$(MSBuildThisFileDirectory)..\..\modules\library-management-module\Configurations\it332-service-account.json"
+      Condition="!Exists('$(MSBuildThisFileDirectory)..\..\modules\library-management-module\Configurations\it332-service-account.json')"
+      ContinueOnError="true" />
+    <Exec
+      Command="dotnet build &quot;$(MSBuildThisFileDirectory)..\..\modules\library-management-module\LibraryManagementSystem.csproj&quot; --configuration $(Configuration) --verbosity quiet"
+      ContinueOnError="true" />
+
+  </Target>
+
 </Project>
