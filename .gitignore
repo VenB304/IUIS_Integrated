@@ -7,6 +7,8 @@ firebase.local.json
 **/firebase.local.json
 *.local.json
 !*.example.json
+Setup-Credentials.ps1
+*.local.ps1
 
 ## Visual Studio temporary files, builds, and metadata
 .vs/
