@@ -52,8 +52,10 @@
       Command="dotnet build &quot;$(MSBuildThisFileDirectory)..\..\modules\Team1_StudentManagementModule\Team1_Final_Project\Team1_Final_Project.csproj&quot; --configuration $(Configuration) --verbosity quiet"
       ContinueOnError="true" />
 
-    <Message Text="[IUIS] Skipping Team 2 — Teacher Management auto-build." Importance="high" />
-    <Warning Text="Team 2 (Teacher_Management) uses .NET Framework 4.8 with packages.config which requires nuget.exe for restore. Open modules\Team2_Teacher_Management\Teacher_Management.sln in Visual Studio once to restore packages, then build. After that the dashboard card will activate automatically." />
+    <Message Text="[IUIS] Building Team 2 — Teacher Management..." Importance="high" />
+    <Exec
+      Command="dotnet build &quot;$(MSBuildThisFileDirectory)..\..\modules\Team2_Teacher_Management\Teacher_Management\Teacher_Management.csproj&quot; --configuration $(Configuration) --verbosity quiet"
+      ContinueOnError="true" />
 
     <Message Text="[IUIS] Building Team 4 — Registrar Management..." Importance="high" />
     <Exec

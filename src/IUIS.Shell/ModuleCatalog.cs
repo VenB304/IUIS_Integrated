@@ -34,13 +34,13 @@ namespace IUIS.Shell
                     exeName:      "Team1_Final_Project.exe",
                     framework:    "net10.0-windows",
                     nestedFolder: "Team1_Final_Project"))
-                // Team 2 — private repo: Team2_Teacher_Management, .NET Framework 4.8 (no TFM subfolder)
+                // Team 2 — private repo: Team2_Teacher_Management, modernized to net8.0-windows
                 .Register(ExternalTeamNamed(2, "Teacher Management",
                     "Manage faculty information and subject assignments", "👨‍🏫",
-                    repoFolder:        "Team2_Teacher_Management",
-                    exeName:           "Teacher_Management.exe",
-                    nestedFolder:      "Teacher_Management",
-                    frameworkSubfolder: false))
+                    repoFolder:   "Team2_Teacher_Management",
+                    exeName:      "Teacher_Management.exe",
+                    nestedFolder: "Teacher_Management",
+                    framework:    "net8.0-windows"))
                 .Register(ExternalTeam(3, "Academic Management",
                     "Manage programs, courses, subjects, and curriculum", "📖"))
                 // Team 4 — repo: RegistrarManagement, exe: RegistrarManagement.exe
