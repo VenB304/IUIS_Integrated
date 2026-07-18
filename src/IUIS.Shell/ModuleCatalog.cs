@@ -27,8 +27,13 @@ namespace IUIS.Shell
             var registry = new ModuleRegistry();
 
             registry
-                .Register(ExternalTeam(1, "Student Management",
-                    "Manage student profiles and personal information", "🎓"))
+                // Team 1 — repo: Team1_StudentManagementModule, project subfolder: Team1_Final_Project
+                .Register(ExternalTeamNamed(1, "Student Management",
+                    "Manage student profiles and personal information", "🎓",
+                    repoFolder:   "Team1_StudentManagementModule",
+                    exeName:      "Team1_Final_Project.exe",
+                    framework:    "net10.0-windows",
+                    nestedFolder: "Team1_Final_Project"))
                 .Register(ExternalTeam(2, "Teacher Management",
                     "Manage faculty information and subject assignments", "👨‍🏫"))
                 .Register(ExternalTeam(3, "Academic Management",
@@ -85,7 +90,8 @@ namespace IUIS.Shell
             string icon,
             string repoFolder,
             string exeName,
-            string framework = "net10.0-windows")
+            string framework    = "net10.0-windows",
+            string? nestedFolder = null)
         {
             var descriptor = new ModuleDescriptor(
                 ModuleId:    $"team{teamNumber}.external",
@@ -96,7 +102,7 @@ namespace IUIS.Shell
                 Order:       teamNumber);
 
             return new ExternalProcessModule(descriptor,
-                ResolveNamedExe(repoFolder, exeName, framework));
+                ResolveNamedExe(repoFolder, exeName, framework, nestedFolder));
         }
 
         /// <summary>
@@ -140,17 +146,26 @@ namespace IUIS.Shell
         /// Finds a team's built executable when their repo folder and exe name
         /// do not follow the Final_Project_Team_N naming convention.
         /// </summary>
-        private static string ResolveNamedExe(string repoFolder, string exeName, string framework)
+        private static string ResolveNamedExe(
+            string  repoFolder,
+            string  exeName,
+            string  framework,
+            string? nestedFolder = null)
         {
+            // Build the bin path segment — either directly in repo root or in a named subfolder.
+            var binSegment = nestedFolder is null
+                ? Path.Combine("bin", "Debug", framework, exeName)
+                : Path.Combine(nestedFolder, "bin", "Debug", framework, exeName);
+
             // Three layouts checked in order:
-            //   1. Git submodule: modules/<repoFolder>/bin/...  (checked first — the canonical location)
-            //   2. Sibling clone: <repoFolder>/bin/...          (someone cloned next to IUIS_Integrated)
-            //   3. Nested clone:  <repoFolder>/<repoFolder>/bin/...
+            //   1. Git submodule: modules/<repoFolder>/[nested/]bin/...  (canonical)
+            //   2. Sibling clone: <repoFolder>/[nested/]bin/...
+            //   3. Nested clone:  <repoFolder>/<repoFolder>/[nested/]bin/...
             string[] shapes =
             [
-                Path.Combine("modules", repoFolder, "bin", "Debug", framework, exeName),
-                Path.Combine(repoFolder, "bin", "Debug", framework, exeName),
-                Path.Combine(repoFolder, repoFolder, "bin", "Debug", framework, exeName)
+                Path.Combine("modules", repoFolder, binSegment),
+                Path.Combine(repoFolder, binSegment),
+                Path.Combine(repoFolder, repoFolder, binSegment)
             ];
 
             var dir = new DirectoryInfo(AppContext.BaseDirectory);
