@@ -162,6 +162,8 @@ namespace IUIS.Shell.Forms
             ClientSize = new Size(1084, 961);
             Controls.Add(_cardsPanel);
             Controls.Add(_header);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "GlobalDashboardForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Batangas State University - IUIS Dashboard";

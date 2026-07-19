@@ -175,10 +175,9 @@ namespace IUIS.Modules.Team6.Forms
             TabControl.Controls.Add(reportsTab);
             TabControl.Dock = DockStyle.Fill;
             TabControl.Location = new Point(0, 0);
-            TabControl.Margin = new Padding(3, 4, 3, 4);
             TabControl.Name = "TabControl";
             TabControl.SelectedIndex = 0;
-            TabControl.Size = new Size(1122, 726);
+            TabControl.Size = new Size(984, 548);
             TabControl.TabIndex = 0;
             // 
             // employeeTab
@@ -195,11 +194,10 @@ namespace IUIS.Modules.Team6.Forms
             employeeTab.Controls.Add(DGV_EmployeeList);
             employeeTab.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             employeeTab.ForeColor = Color.FromArgb(139, 0, 26);
-            employeeTab.Location = new Point(4, 29);
-            employeeTab.Margin = new Padding(3, 4, 3, 4);
+            employeeTab.Location = new Point(4, 24);
             employeeTab.Name = "employeeTab";
-            employeeTab.Padding = new Padding(3, 4, 3, 4);
-            employeeTab.Size = new Size(1114, 693);
+            employeeTab.Padding = new Padding(3, 3, 3, 3);
+            employeeTab.Size = new Size(976, 520);
             employeeTab.TabIndex = 0;
             employeeTab.Text = "👤 Employees";
             employeeTab.UseVisualStyleBackColor = true;
@@ -210,9 +208,9 @@ namespace IUIS.Modules.Team6.Forms
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(139, 0, 26);
-            label5.Location = new Point(293, 8);
+            label5.Location = new Point(256, 6);
             label5.Name = "label5";
-            label5.Size = new Size(183, 28);
+            label5.Size = new Size(144, 21);
             label5.TabIndex = 11;
             label5.Text = "👤  Employee List";
             label5.Click += label5_Click;
@@ -223,9 +221,9 @@ namespace IUIS.Modules.Team6.Forms
             quickDetailsLabel.AutoSize = true;
             quickDetailsLabel.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             quickDetailsLabel.ForeColor = Color.FromArgb(139, 0, 26);
-            quickDetailsLabel.Location = new Point(293, 432);
+            quickDetailsLabel.Location = new Point(256, 328);
             quickDetailsLabel.Name = "quickDetailsLabel";
-            quickDetailsLabel.Size = new Size(233, 23);
+            quickDetailsLabel.Size = new Size(191, 19);
             quickDetailsLabel.TabIndex = 9;
             quickDetailsLabel.Text = "👤  Quick Employee Details";
             // 
@@ -248,14 +246,13 @@ namespace IUIS.Modules.Team6.Forms
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(139, 0, 26);
             dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(255, 255, 192);
             dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             DGV_EmployeeQuickDetails.DefaultCellStyle = dataGridViewCellStyle3;
             DGV_EmployeeQuickDetails.EnableHeadersVisualStyles = false;
-            DGV_EmployeeQuickDetails.Location = new Point(301, 460);
-            DGV_EmployeeQuickDetails.Margin = new Padding(3, 4, 3, 4);
+            DGV_EmployeeQuickDetails.Location = new Point(263, 349);
             DGV_EmployeeQuickDetails.Name = "DGV_EmployeeQuickDetails";
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = SystemColors.Control;
@@ -268,7 +265,7 @@ namespace IUIS.Modules.Team6.Forms
             DGV_EmployeeQuickDetails.RowHeadersWidth = 51;
             dataGridViewCellStyle5.SelectionForeColor = Color.Black;
             DGV_EmployeeQuickDetails.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            DGV_EmployeeQuickDetails.Size = new Size(803, 114);
+            DGV_EmployeeQuickDetails.Size = new Size(705, 86);
             DGV_EmployeeQuickDetails.TabIndex = 6;
             // 
             // viewEmployeeDetailsButton
@@ -276,16 +273,15 @@ namespace IUIS.Modules.Team6.Forms
             viewEmployeeDetailsButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             viewEmployeeDetailsButton.BackColor = Color.FromArgb(55, 65, 81);
             viewEmployeeDetailsButton.Enabled = false;
+            viewEmployeeDetailsButton.FlatAppearance.BorderSize = 0;
+            viewEmployeeDetailsButton.FlatStyle = FlatStyle.Flat;
             viewEmployeeDetailsButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             viewEmployeeDetailsButton.ForeColor = SystemColors.ControlLightLight;
-            viewEmployeeDetailsButton.Location = new Point(895, 588);
-            viewEmployeeDetailsButton.Margin = new Padding(3, 4, 3, 4);
+            viewEmployeeDetailsButton.Location = new Point(785, 445);
             viewEmployeeDetailsButton.Name = "viewEmployeeDetailsButton";
-            viewEmployeeDetailsButton.Size = new Size(209, 43);
+            viewEmployeeDetailsButton.Size = new Size(183, 32);
             viewEmployeeDetailsButton.TabIndex = 5;
             viewEmployeeDetailsButton.Text = "👁️ View Details";
-            viewEmployeeDetailsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            viewEmployeeDetailsButton.FlatAppearance.BorderSize = 0;
             viewEmployeeDetailsButton.UseVisualStyleBackColor = false;
             // 
             // deleteEmployeeButton
@@ -293,16 +289,15 @@ namespace IUIS.Modules.Team6.Forms
             deleteEmployeeButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             deleteEmployeeButton.BackColor = Color.FromArgb(176, 0, 26);
             deleteEmployeeButton.Enabled = false;
+            deleteEmployeeButton.FlatAppearance.BorderSize = 0;
+            deleteEmployeeButton.FlatStyle = FlatStyle.Flat;
             deleteEmployeeButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             deleteEmployeeButton.ForeColor = SystemColors.ControlLightLight;
-            deleteEmployeeButton.Location = new Point(694, 588);
-            deleteEmployeeButton.Margin = new Padding(3, 4, 3, 4);
+            deleteEmployeeButton.Location = new Point(609, 445);
             deleteEmployeeButton.Name = "deleteEmployeeButton";
-            deleteEmployeeButton.Size = new Size(194, 43);
+            deleteEmployeeButton.Size = new Size(170, 32);
             deleteEmployeeButton.TabIndex = 4;
             deleteEmployeeButton.Text = "❌ Delete Employee";
-            deleteEmployeeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            deleteEmployeeButton.FlatAppearance.BorderSize = 0;
             deleteEmployeeButton.UseVisualStyleBackColor = false;
             deleteEmployeeButton.Click += deleteEmployeeButton_Click;
             // 
@@ -311,32 +306,30 @@ namespace IUIS.Modules.Team6.Forms
             editEmployeeButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             editEmployeeButton.BackColor = Color.FromArgb(255, 185, 44);
             editEmployeeButton.Enabled = false;
+            editEmployeeButton.FlatAppearance.BorderSize = 0;
+            editEmployeeButton.FlatStyle = FlatStyle.Flat;
             editEmployeeButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             editEmployeeButton.ForeColor = SystemColors.ActiveCaptionText;
-            editEmployeeButton.Location = new Point(506, 588);
-            editEmployeeButton.Margin = new Padding(3, 4, 3, 4);
+            editEmployeeButton.Location = new Point(443, 445);
             editEmployeeButton.Name = "editEmployeeButton";
-            editEmployeeButton.Size = new Size(179, 43);
+            editEmployeeButton.Size = new Size(157, 32);
             editEmployeeButton.TabIndex = 3;
             editEmployeeButton.Text = "✏️ Edit";
-            editEmployeeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            editEmployeeButton.FlatAppearance.BorderSize = 0;
             editEmployeeButton.UseVisualStyleBackColor = false;
             // 
             // addEmployeeButton
             // 
             addEmployeeButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             addEmployeeButton.BackColor = Color.FromArgb(139, 0, 26);
+            addEmployeeButton.FlatAppearance.BorderSize = 0;
+            addEmployeeButton.FlatStyle = FlatStyle.Flat;
             addEmployeeButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             addEmployeeButton.ForeColor = SystemColors.ControlLightLight;
-            addEmployeeButton.Location = new Point(293, 588);
-            addEmployeeButton.Margin = new Padding(3, 4, 3, 4);
+            addEmployeeButton.Location = new Point(256, 445);
             addEmployeeButton.Name = "addEmployeeButton";
-            addEmployeeButton.Size = new Size(203, 43);
+            addEmployeeButton.Size = new Size(178, 32);
             addEmployeeButton.TabIndex = 2;
             addEmployeeButton.Text = "✚ Add Employee";
-            addEmployeeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            addEmployeeButton.FlatAppearance.BorderSize = 0;
             addEmployeeButton.UseVisualStyleBackColor = false;
             // 
             // panel1
@@ -356,10 +349,9 @@ namespace IUIS.Modules.Team6.Forms
             panel1.Controls.Add(departmentLabel);
             panel1.Controls.Add(TB_Search);
             panel1.Controls.Add(searchLabel);
-            panel1.Location = new Point(9, 8);
-            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Location = new Point(8, 6);
             panel1.Name = "panel1";
-            panel1.Size = new Size(271, 622);
+            panel1.Size = new Size(237, 471);
             panel1.TabIndex = 1;
             panel1.Paint += panel1_Paint;
             // 
@@ -367,9 +359,9 @@ namespace IUIS.Modules.Team6.Forms
             // 
             label3.AutoSize = true;
             label3.ForeColor = Color.RosyBrown;
-            label3.Location = new Point(15, 375);
+            label3.Location = new Point(13, 281);
             label3.Name = "label3";
-            label3.Size = new Size(243, 20);
+            label3.Size = new Size(202, 15);
             label3.TabIndex = 11;
             label3.Text = "_______________________________________";
             label3.Click += label3_Click;
@@ -379,9 +371,9 @@ namespace IUIS.Modules.Team6.Forms
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ControlLightLight;
-            label2.Location = new Point(25, 426);
+            label2.Location = new Point(22, 320);
             label2.Name = "label2";
-            label2.Size = new Size(73, 50);
+            label2.Size = new Size(53, 41);
             label2.TabIndex = 10;
             label2.Text = "👤";
             // 
@@ -390,9 +382,9 @@ namespace IUIS.Modules.Team6.Forms
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(15, 8);
+            label1.Location = new Point(13, 6);
             label1.Name = "label1";
-            label1.Size = new Size(119, 28);
+            label1.Size = new Size(93, 21);
             label1.TabIndex = 9;
             label1.Text = "▼   FILTERS";
             label1.Click += label1_Click;
@@ -402,9 +394,9 @@ namespace IUIS.Modules.Team6.Forms
             totalRecordValueLabel.AutoSize = true;
             totalRecordValueLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             totalRecordValueLabel.ForeColor = SystemColors.ControlLightLight;
-            totalRecordValueLabel.Location = new Point(106, 451);
+            totalRecordValueLabel.Location = new Point(93, 338);
             totalRecordValueLabel.Name = "totalRecordValueLabel";
-            totalRecordValueLabel.Size = new Size(27, 31);
+            totalRecordValueLabel.Size = new Size(23, 25);
             totalRecordValueLabel.TabIndex = 8;
             totalRecordValueLabel.Text = "0";
             totalRecordValueLabel.Click += totalRecordValueLabel_Click;
@@ -414,34 +406,32 @@ namespace IUIS.Modules.Team6.Forms
             totalRecordsLabel.AutoSize = true;
             totalRecordsLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             totalRecordsLabel.ForeColor = SystemColors.ControlLightLight;
-            totalRecordsLabel.Location = new Point(98, 426);
+            totalRecordsLabel.Location = new Point(86, 320);
             totalRecordsLabel.Name = "totalRecordsLabel";
-            totalRecordsLabel.Size = new Size(108, 20);
+            totalRecordsLabel.Size = new Size(84, 15);
             totalRecordsLabel.TabIndex = 7;
             totalRecordsLabel.Text = "Total Records: ";
             // 
             // clearFilterButton
             // 
             clearFilterButton.BackColor = Color.FromArgb(255, 210, 44);
+            clearFilterButton.FlatAppearance.BorderSize = 0;
+            clearFilterButton.FlatStyle = FlatStyle.Flat;
             clearFilterButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             clearFilterButton.ForeColor = Color.Black;
-            clearFilterButton.Location = new Point(15, 329);
-            clearFilterButton.Margin = new Padding(3, 4, 3, 4);
+            clearFilterButton.Location = new Point(13, 247);
             clearFilterButton.Name = "clearFilterButton";
-            clearFilterButton.Size = new Size(241, 33);
+            clearFilterButton.Size = new Size(211, 25);
             clearFilterButton.TabIndex = 6;
             clearFilterButton.Text = "⟲ Clear Filters";
-            clearFilterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            clearFilterButton.FlatAppearance.BorderSize = 0;
             clearFilterButton.UseVisualStyleBackColor = false;
             // 
             // CB_Status
             // 
             CB_Status.FormattingEnabled = true;
-            CB_Status.Location = new Point(15, 269);
-            CB_Status.Margin = new Padding(3, 4, 3, 4);
+            CB_Status.Location = new Point(13, 202);
             CB_Status.Name = "CB_Status";
-            CB_Status.Size = new Size(241, 28);
+            CB_Status.Size = new Size(211, 23);
             CB_Status.TabIndex = 5;
             // 
             // statusLabel
@@ -449,9 +439,9 @@ namespace IUIS.Modules.Team6.Forms
             statusLabel.AutoSize = true;
             statusLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             statusLabel.ForeColor = SystemColors.ControlLightLight;
-            statusLabel.Location = new Point(15, 245);
+            statusLabel.Location = new Point(13, 184);
             statusLabel.Name = "statusLabel";
-            statusLabel.Size = new Size(50, 20);
+            statusLabel.Size = new Size(40, 15);
             statusLabel.TabIndex = 4;
             statusLabel.Text = "Status";
             // 
@@ -459,10 +449,9 @@ namespace IUIS.Modules.Team6.Forms
             // 
             CB_Department.ForeColor = Color.Black;
             CB_Department.FormattingEnabled = true;
-            CB_Department.Location = new Point(15, 165);
-            CB_Department.Margin = new Padding(3, 4, 3, 4);
+            CB_Department.Location = new Point(13, 124);
             CB_Department.Name = "CB_Department";
-            CB_Department.Size = new Size(241, 28);
+            CB_Department.Size = new Size(211, 23);
             CB_Department.TabIndex = 3;
             // 
             // departmentLabel
@@ -470,20 +459,19 @@ namespace IUIS.Modules.Team6.Forms
             departmentLabel.AutoSize = true;
             departmentLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             departmentLabel.ForeColor = SystemColors.ControlLightLight;
-            departmentLabel.Location = new Point(15, 141);
+            departmentLabel.Location = new Point(13, 106);
             departmentLabel.Name = "departmentLabel";
-            departmentLabel.Size = new Size(91, 20);
+            departmentLabel.Size = new Size(71, 15);
             departmentLabel.TabIndex = 2;
             departmentLabel.Text = "Department";
             departmentLabel.Click += departmentLabel_Click;
             // 
             // TB_Search
             // 
-            TB_Search.Location = new Point(15, 97);
-            TB_Search.Margin = new Padding(3, 4, 3, 4);
+            TB_Search.Location = new Point(13, 73);
             TB_Search.Name = "TB_Search";
             TB_Search.PlaceholderText = " ⌕ Search by name, ID, position...";
-            TB_Search.Size = new Size(241, 27);
+            TB_Search.Size = new Size(211, 23);
             TB_Search.TabIndex = 1;
             // 
             // searchLabel
@@ -491,9 +479,9 @@ namespace IUIS.Modules.Team6.Forms
             searchLabel.AutoSize = true;
             searchLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             searchLabel.ForeColor = SystemColors.ControlLightLight;
-            searchLabel.Location = new Point(15, 73);
+            searchLabel.Location = new Point(13, 55);
             searchLabel.Name = "searchLabel";
-            searchLabel.Size = new Size(55, 20);
+            searchLabel.Size = new Size(43, 15);
             searchLabel.TabIndex = 0;
             searchLabel.Text = "Search";
             // 
@@ -526,8 +514,7 @@ namespace IUIS.Modules.Team6.Forms
             DGV_EmployeeList.DefaultCellStyle = dataGridViewCellStyle8;
             DGV_EmployeeList.EnableHeadersVisualStyles = false;
             DGV_EmployeeList.GridColor = Color.DimGray;
-            DGV_EmployeeList.Location = new Point(301, 40);
-            DGV_EmployeeList.Margin = new Padding(3, 4, 3, 4);
+            DGV_EmployeeList.Location = new Point(263, 30);
             DGV_EmployeeList.Name = "DGV_EmployeeList";
             dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = SystemColors.Control;
@@ -543,7 +530,7 @@ namespace IUIS.Modules.Team6.Forms
             dataGridViewCellStyle10.SelectionBackColor = Color.FromArgb(255, 255, 192);
             DGV_EmployeeList.RowsDefaultCellStyle = dataGridViewCellStyle10;
             DGV_EmployeeList.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            DGV_EmployeeList.Size = new Size(803, 364);
+            DGV_EmployeeList.Size = new Size(705, 277);
             DGV_EmployeeList.TabIndex = 0;
             DGV_EmployeeList.CellContentClick += DGV_EmployeeList_CellContentClick;
             // 
@@ -557,11 +544,10 @@ namespace IUIS.Modules.Team6.Forms
             departmentsTab.Controls.Add(addDepartmentButton);
             departmentsTab.Controls.Add(panel2);
             departmentsTab.Controls.Add(DGV_DepartmentList);
-            departmentsTab.Location = new Point(4, 29);
-            departmentsTab.Margin = new Padding(3, 4, 3, 4);
+            departmentsTab.Location = new Point(4, 24);
             departmentsTab.Name = "departmentsTab";
-            departmentsTab.Padding = new Padding(3, 4, 3, 4);
-            departmentsTab.Size = new Size(1114, 693);
+            departmentsTab.Padding = new Padding(3, 3, 3, 3);
+            departmentsTab.Size = new Size(974, 516);
             departmentsTab.TabIndex = 1;
             departmentsTab.Text = "🏢 Departments";
             departmentsTab.UseVisualStyleBackColor = true;
@@ -571,9 +557,9 @@ namespace IUIS.Modules.Team6.Forms
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.FromArgb(139, 0, 26);
-            label4.Location = new Point(297, 9);
+            label4.Location = new Point(260, 7);
             label4.Name = "label4";
-            label4.Size = new Size(233, 28);
+            label4.Size = new Size(186, 21);
             label4.TabIndex = 10;
             label4.Text = "🏢 Department Details";
             // 
@@ -582,9 +568,9 @@ namespace IUIS.Modules.Team6.Forms
             deptQuickDetailsLabel.AutoSize = true;
             deptQuickDetailsLabel.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
             deptQuickDetailsLabel.ForeColor = Color.FromArgb(139, 0, 26);
-            deptQuickDetailsLabel.Location = new Point(297, 435);
+            deptQuickDetailsLabel.Location = new Point(260, 326);
             deptQuickDetailsLabel.Name = "deptQuickDetailsLabel";
-            deptQuickDetailsLabel.Size = new Size(215, 20);
+            deptQuickDetailsLabel.Size = new Size(168, 15);
             deptQuickDetailsLabel.TabIndex = 9;
             deptQuickDetailsLabel.Text = "🏢 Quick Department Details";
             // 
@@ -612,8 +598,7 @@ namespace IUIS.Modules.Team6.Forms
             dataGridViewCellStyle13.WrapMode = DataGridViewTriState.False;
             DGV_DepartmentQuickDetails.DefaultCellStyle = dataGridViewCellStyle13;
             DGV_DepartmentQuickDetails.EnableHeadersVisualStyles = false;
-            DGV_DepartmentQuickDetails.Location = new Point(297, 465);
-            DGV_DepartmentQuickDetails.Margin = new Padding(3, 4, 3, 4);
+            DGV_DepartmentQuickDetails.Location = new Point(260, 349);
             DGV_DepartmentQuickDetails.Name = "DGV_DepartmentQuickDetails";
             dataGridViewCellStyle14.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle14.BackColor = Color.White;
@@ -624,53 +609,50 @@ namespace IUIS.Modules.Team6.Forms
             dataGridViewCellStyle14.WrapMode = DataGridViewTriState.True;
             DGV_DepartmentQuickDetails.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             DGV_DepartmentQuickDetails.RowHeadersWidth = 51;
-            DGV_DepartmentQuickDetails.Size = new Size(809, 122);
+            DGV_DepartmentQuickDetails.Size = new Size(708, 92);
             DGV_DepartmentQuickDetails.TabIndex = 6;
             // 
             // deleteDepartmentButton
             // 
             deleteDepartmentButton.BackColor = Color.FromArgb(176, 0, 26);
             deleteDepartmentButton.Enabled = false;
+            deleteDepartmentButton.FlatAppearance.BorderSize = 0;
+            deleteDepartmentButton.FlatStyle = FlatStyle.Flat;
             deleteDepartmentButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             deleteDepartmentButton.ForeColor = SystemColors.ControlLightLight;
-            deleteDepartmentButton.Location = new Point(771, 595);
-            deleteDepartmentButton.Margin = new Padding(3, 4, 3, 4);
+            deleteDepartmentButton.Location = new Point(675, 446);
             deleteDepartmentButton.Name = "deleteDepartmentButton";
-            deleteDepartmentButton.Size = new Size(217, 43);
+            deleteDepartmentButton.Size = new Size(190, 32);
             deleteDepartmentButton.TabIndex = 4;
             deleteDepartmentButton.Text = "❌ Delete Department";
-            deleteDepartmentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            deleteDepartmentButton.FlatAppearance.BorderSize = 0;
             deleteDepartmentButton.UseVisualStyleBackColor = false;
             // 
             // editDepartmentButton
             // 
             editDepartmentButton.BackColor = Color.FromArgb(255, 185, 44);
             editDepartmentButton.Enabled = false;
+            editDepartmentButton.FlatAppearance.BorderSize = 0;
+            editDepartmentButton.FlatStyle = FlatStyle.Flat;
             editDepartmentButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            editDepartmentButton.Location = new Point(619, 595);
-            editDepartmentButton.Margin = new Padding(3, 4, 3, 4);
+            editDepartmentButton.Location = new Point(542, 446);
             editDepartmentButton.Name = "editDepartmentButton";
-            editDepartmentButton.Size = new Size(146, 43);
+            editDepartmentButton.Size = new Size(128, 32);
             editDepartmentButton.TabIndex = 3;
             editDepartmentButton.Text = "✏️ Edit";
-            editDepartmentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            editDepartmentButton.FlatAppearance.BorderSize = 0;
             editDepartmentButton.UseVisualStyleBackColor = false;
             // 
             // addDepartmentButton
             // 
             addDepartmentButton.BackColor = Color.FromArgb(139, 0, 26);
+            addDepartmentButton.FlatAppearance.BorderSize = 0;
+            addDepartmentButton.FlatStyle = FlatStyle.Flat;
             addDepartmentButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             addDepartmentButton.ForeColor = SystemColors.ControlLightLight;
-            addDepartmentButton.Location = new Point(392, 595);
-            addDepartmentButton.Margin = new Padding(3, 4, 3, 4);
+            addDepartmentButton.Location = new Point(343, 446);
             addDepartmentButton.Name = "addDepartmentButton";
-            addDepartmentButton.Size = new Size(217, 43);
+            addDepartmentButton.Size = new Size(190, 32);
             addDepartmentButton.TabIndex = 2;
             addDepartmentButton.Text = "✚ Add Department";
-            addDepartmentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            addDepartmentButton.FlatAppearance.BorderSize = 0;
             addDepartmentButton.UseVisualStyleBackColor = false;
             // 
             // panel2
@@ -688,10 +670,9 @@ namespace IUIS.Modules.Team6.Forms
             panel2.Controls.Add(locationLabel);
             panel2.Controls.Add(TB_DeptSearch);
             panel2.Controls.Add(deptSearchLabel);
-            panel2.Location = new Point(10, 8);
-            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Location = new Point(9, 6);
             panel2.Name = "panel2";
-            panel2.Size = new Size(269, 629);
+            panel2.Size = new Size(236, 472);
             panel2.TabIndex = 1;
             // 
             // label9
@@ -699,9 +680,9 @@ namespace IUIS.Modules.Team6.Forms
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label9.ForeColor = SystemColors.ControlLightLight;
-            label9.Location = new Point(14, 8);
+            label9.Location = new Point(12, 6);
             label9.Name = "label9";
-            label9.Size = new Size(119, 28);
+            label9.Size = new Size(93, 21);
             label9.TabIndex = 12;
             label9.Text = "▼   FILTERS";
             // 
@@ -709,9 +690,9 @@ namespace IUIS.Modules.Team6.Forms
             // 
             label8.AutoSize = true;
             label8.ForeColor = Color.RosyBrown;
-            label8.Location = new Point(13, 315);
+            label8.Location = new Point(11, 236);
             label8.Name = "label8";
-            label8.Size = new Size(249, 20);
+            label8.Size = new Size(207, 15);
             label8.TabIndex = 11;
             label8.Text = "________________________________________";
             label8.Click += label8_Click;
@@ -719,9 +700,9 @@ namespace IUIS.Modules.Team6.Forms
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(130, 335);
+            label7.Location = new Point(114, 251);
             label7.Name = "label7";
-            label7.Size = new Size(0, 20);
+            label7.Size = new Size(0, 15);
             label7.TabIndex = 10;
             // 
             // label6
@@ -729,9 +710,9 @@ namespace IUIS.Modules.Team6.Forms
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = SystemColors.ControlLightLight;
-            label6.Location = new Point(20, 363);
+            label6.Location = new Point(18, 272);
             label6.Name = "label6";
-            label6.Size = new Size(83, 50);
+            label6.Size = new Size(67, 41);
             label6.TabIndex = 9;
             label6.Text = "🏢 ";
             label6.Click += label6_Click;
@@ -741,9 +722,9 @@ namespace IUIS.Modules.Team6.Forms
             totalDeptsValueLabel.AutoSize = true;
             totalDeptsValueLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             totalDeptsValueLabel.ForeColor = SystemColors.ControlLightLight;
-            totalDeptsValueLabel.Location = new Point(109, 387);
+            totalDeptsValueLabel.Location = new Point(95, 290);
             totalDeptsValueLabel.Name = "totalDeptsValueLabel";
-            totalDeptsValueLabel.Size = new Size(27, 31);
+            totalDeptsValueLabel.Size = new Size(23, 25);
             totalDeptsValueLabel.TabIndex = 8;
             totalDeptsValueLabel.Text = "0";
             // 
@@ -752,33 +733,31 @@ namespace IUIS.Modules.Team6.Forms
             totalDeptsLabel.AutoSize = true;
             totalDeptsLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             totalDeptsLabel.ForeColor = SystemColors.ControlLightLight;
-            totalDeptsLabel.Location = new Point(105, 363);
+            totalDeptsLabel.Location = new Point(92, 272);
             totalDeptsLabel.Name = "totalDeptsLabel";
-            totalDeptsLabel.Size = new Size(93, 20);
+            totalDeptsLabel.Size = new Size(73, 15);
             totalDeptsLabel.TabIndex = 7;
             totalDeptsLabel.Text = "Total Depts: ";
             // 
             // clearDeptFilterButton
             // 
             clearDeptFilterButton.BackColor = Color.FromArgb(255, 210, 44);
+            clearDeptFilterButton.FlatAppearance.BorderSize = 0;
+            clearDeptFilterButton.FlatStyle = FlatStyle.Flat;
             clearDeptFilterButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            clearDeptFilterButton.Location = new Point(13, 250);
-            clearDeptFilterButton.Margin = new Padding(3, 4, 3, 4);
+            clearDeptFilterButton.Location = new Point(11, 188);
             clearDeptFilterButton.Name = "clearDeptFilterButton";
-            clearDeptFilterButton.Size = new Size(241, 31);
+            clearDeptFilterButton.Size = new Size(211, 23);
             clearDeptFilterButton.TabIndex = 6;
             clearDeptFilterButton.Text = "⟲ Clear Filters";
-            clearDeptFilterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            clearDeptFilterButton.FlatAppearance.BorderSize = 0;
             clearDeptFilterButton.UseVisualStyleBackColor = false;
             // 
             // CB_Location
             // 
             CB_Location.FormattingEnabled = true;
-            CB_Location.Location = new Point(14, 178);
-            CB_Location.Margin = new Padding(3, 4, 3, 4);
+            CB_Location.Location = new Point(12, 134);
             CB_Location.Name = "CB_Location";
-            CB_Location.Size = new Size(241, 28);
+            CB_Location.Size = new Size(211, 23);
             CB_Location.TabIndex = 3;
             // 
             // locationLabel
@@ -786,20 +765,19 @@ namespace IUIS.Modules.Team6.Forms
             locationLabel.AutoSize = true;
             locationLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             locationLabel.ForeColor = SystemColors.ControlLightLight;
-            locationLabel.Location = new Point(14, 142);
+            locationLabel.Location = new Point(12, 106);
             locationLabel.Name = "locationLabel";
-            locationLabel.Size = new Size(67, 20);
+            locationLabel.Size = new Size(53, 15);
             locationLabel.TabIndex = 2;
             locationLabel.Text = "Location";
             locationLabel.Click += locationLabel_Click;
             // 
             // TB_DeptSearch
             // 
-            TB_DeptSearch.Location = new Point(14, 97);
-            TB_DeptSearch.Margin = new Padding(3, 4, 3, 4);
+            TB_DeptSearch.Location = new Point(12, 73);
             TB_DeptSearch.Name = "TB_DeptSearch";
             TB_DeptSearch.PlaceholderText = " ⌕ Search by name or location...";
-            TB_DeptSearch.Size = new Size(241, 27);
+            TB_DeptSearch.Size = new Size(211, 23);
             TB_DeptSearch.TabIndex = 1;
             // 
             // deptSearchLabel
@@ -807,9 +785,9 @@ namespace IUIS.Modules.Team6.Forms
             deptSearchLabel.AutoSize = true;
             deptSearchLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             deptSearchLabel.ForeColor = SystemColors.ControlLightLight;
-            deptSearchLabel.Location = new Point(13, 73);
+            deptSearchLabel.Location = new Point(11, 55);
             deptSearchLabel.Name = "deptSearchLabel";
-            deptSearchLabel.Size = new Size(55, 20);
+            deptSearchLabel.Size = new Size(43, 15);
             deptSearchLabel.TabIndex = 0;
             deptSearchLabel.Text = "Search";
             // 
@@ -839,8 +817,7 @@ namespace IUIS.Modules.Team6.Forms
             dataGridViewCellStyle17.WrapMode = DataGridViewTriState.False;
             DGV_DepartmentList.DefaultCellStyle = dataGridViewCellStyle17;
             DGV_DepartmentList.EnableHeadersVisualStyles = false;
-            DGV_DepartmentList.Location = new Point(297, 41);
-            DGV_DepartmentList.Margin = new Padding(3, 4, 3, 4);
+            DGV_DepartmentList.Location = new Point(260, 31);
             DGV_DepartmentList.Name = "DGV_DepartmentList";
             dataGridViewCellStyle18.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle18.BackColor = Color.White;
@@ -855,7 +832,7 @@ namespace IUIS.Modules.Team6.Forms
             dataGridViewCellStyle19.SelectionBackColor = Color.FromArgb(255, 255, 192);
             dataGridViewCellStyle19.SelectionForeColor = Color.Black;
             DGV_DepartmentList.RowsDefaultCellStyle = dataGridViewCellStyle19;
-            DGV_DepartmentList.Size = new Size(809, 386);
+            DGV_DepartmentList.Size = new Size(708, 290);
             DGV_DepartmentList.TabIndex = 0;
             // 
             // attendanceTab
@@ -867,11 +844,10 @@ namespace IUIS.Modules.Team6.Forms
             attendanceTab.Controls.Add(attSummaryPanel);
             attendanceTab.Controls.Add(DGV_AttendanceList);
             attendanceTab.Controls.Add(attFilterPanel);
-            attendanceTab.Location = new Point(4, 29);
-            attendanceTab.Margin = new Padding(3, 4, 3, 4);
+            attendanceTab.Location = new Point(4, 24);
             attendanceTab.Name = "attendanceTab";
-            attendanceTab.Padding = new Padding(3, 4, 3, 4);
-            attendanceTab.Size = new Size(1114, 693);
+            attendanceTab.Padding = new Padding(3, 3, 3, 3);
+            attendanceTab.Size = new Size(974, 516);
             attendanceTab.TabIndex = 2;
             attendanceTab.Text = "🗓️ Attendance";
             attendanceTab.UseVisualStyleBackColor = true;
@@ -881,55 +857,52 @@ namespace IUIS.Modules.Team6.Forms
             label10.AutoSize = true;
             label10.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label10.ForeColor = Color.FromArgb(139, 0, 26);
-            label10.Location = new Point(453, 140);
+            label10.Location = new Point(396, 105);
             label10.Name = "label10";
-            label10.Size = new Size(268, 28);
+            label10.Size = new Size(214, 21);
             label10.TabIndex = 6;
             label10.Text = "🗓️ Attendance Monitoring";
             // 
             // markAbsentLeaveButton
             // 
             markAbsentLeaveButton.BackColor = Color.FromArgb(55, 65, 81);
+            markAbsentLeaveButton.FlatAppearance.BorderSize = 0;
+            markAbsentLeaveButton.FlatStyle = FlatStyle.Flat;
             markAbsentLeaveButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             markAbsentLeaveButton.ForeColor = SystemColors.ControlLightLight;
-            markAbsentLeaveButton.Location = new Point(670, 628);
-            markAbsentLeaveButton.Margin = new Padding(3, 4, 3, 4);
+            markAbsentLeaveButton.Location = new Point(586, 471);
             markAbsentLeaveButton.Name = "markAbsentLeaveButton";
-            markAbsentLeaveButton.Size = new Size(240, 43);
+            markAbsentLeaveButton.Size = new Size(210, 32);
             markAbsentLeaveButton.TabIndex = 5;
             markAbsentLeaveButton.Text = "👤 Mark Absent / On Leave";
-            markAbsentLeaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            markAbsentLeaveButton.FlatAppearance.BorderSize = 0;
             markAbsentLeaveButton.UseVisualStyleBackColor = false;
             // 
             // recordTimeOutButton
             // 
             recordTimeOutButton.BackColor = Color.FromArgb(255, 185, 44);
             recordTimeOutButton.Enabled = false;
+            recordTimeOutButton.FlatAppearance.BorderSize = 0;
+            recordTimeOutButton.FlatStyle = FlatStyle.Flat;
             recordTimeOutButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            recordTimeOutButton.Location = new Point(445, 628);
-            recordTimeOutButton.Margin = new Padding(3, 4, 3, 4);
+            recordTimeOutButton.Location = new Point(389, 471);
             recordTimeOutButton.Name = "recordTimeOutButton";
-            recordTimeOutButton.Size = new Size(217, 43);
+            recordTimeOutButton.Size = new Size(190, 32);
             recordTimeOutButton.TabIndex = 4;
             recordTimeOutButton.Text = "➜] Record Time Out";
-            recordTimeOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            recordTimeOutButton.FlatAppearance.BorderSize = 0;
             recordTimeOutButton.UseVisualStyleBackColor = false;
             // 
             // recordTimeInButton
             // 
             recordTimeInButton.BackColor = Color.FromArgb(139, 0, 26);
+            recordTimeInButton.FlatAppearance.BorderSize = 0;
+            recordTimeInButton.FlatStyle = FlatStyle.Flat;
             recordTimeInButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             recordTimeInButton.ForeColor = SystemColors.ControlLightLight;
-            recordTimeInButton.Location = new Point(212, 628);
-            recordTimeInButton.Margin = new Padding(3, 4, 3, 4);
+            recordTimeInButton.Location = new Point(186, 471);
             recordTimeInButton.Name = "recordTimeInButton";
-            recordTimeInButton.Size = new Size(225, 43);
+            recordTimeInButton.Size = new Size(197, 32);
             recordTimeInButton.TabIndex = 3;
             recordTimeInButton.Text = "➜] Record Time In";
-            recordTimeInButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            recordTimeInButton.FlatAppearance.BorderSize = 0;
             recordTimeInButton.UseVisualStyleBackColor = false;
             // 
             // attSummaryPanel
@@ -941,10 +914,9 @@ namespace IUIS.Modules.Team6.Forms
             attSummaryPanel.Controls.Add(summaryLateLabel);
             attSummaryPanel.Controls.Add(summaryPresentLabel);
             attSummaryPanel.Controls.Add(summaryDailyLabel);
-            attSummaryPanel.Location = new Point(17, 552);
-            attSummaryPanel.Margin = new Padding(3, 4, 3, 4);
+            attSummaryPanel.Location = new Point(15, 414);
             attSummaryPanel.Name = "attSummaryPanel";
-            attSummaryPanel.Size = new Size(1089, 58);
+            attSummaryPanel.Size = new Size(953, 44);
             attSummaryPanel.TabIndex = 2;
             attSummaryPanel.Paint += attSummaryPanel_Paint;
             // 
@@ -953,9 +925,9 @@ namespace IUIS.Modules.Team6.Forms
             summaryOnLeaveLabel.AutoSize = true;
             summaryOnLeaveLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             summaryOnLeaveLabel.ForeColor = Color.FromArgb(55, 65, 81);
-            summaryOnLeaveLabel.Location = new Point(487, 21);
+            summaryOnLeaveLabel.Location = new Point(426, 16);
             summaryOnLeaveLabel.Name = "summaryOnLeaveLabel";
-            summaryOnLeaveLabel.Size = new Size(88, 20);
+            summaryOnLeaveLabel.Size = new Size(69, 15);
             summaryOnLeaveLabel.TabIndex = 4;
             summaryOnLeaveLabel.Text = "On Leave: 0";
             // 
@@ -964,9 +936,9 @@ namespace IUIS.Modules.Team6.Forms
             summaryAbsentLabel.AutoSize = true;
             summaryAbsentLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             summaryAbsentLabel.ForeColor = Color.FromArgb(139, 0, 26);
-            summaryAbsentLabel.Location = new Point(384, 21);
+            summaryAbsentLabel.Location = new Point(336, 16);
             summaryAbsentLabel.Name = "summaryAbsentLabel";
-            summaryAbsentLabel.Size = new Size(72, 20);
+            summaryAbsentLabel.Size = new Size(57, 15);
             summaryAbsentLabel.TabIndex = 3;
             summaryAbsentLabel.Text = "Absent: 0";
             // 
@@ -975,9 +947,9 @@ namespace IUIS.Modules.Team6.Forms
             summaryLateLabel.AutoSize = true;
             summaryLateLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             summaryLateLabel.ForeColor = Color.FromArgb(255, 128, 0);
-            summaryLateLabel.Location = new Point(293, 21);
+            summaryLateLabel.Location = new Point(256, 16);
             summaryLateLabel.Name = "summaryLateLabel";
-            summaryLateLabel.Size = new Size(53, 20);
+            summaryLateLabel.Size = new Size(42, 15);
             summaryLateLabel.TabIndex = 2;
             summaryLateLabel.Text = "Late: 0";
             // 
@@ -986,9 +958,9 @@ namespace IUIS.Modules.Team6.Forms
             summaryPresentLabel.AutoSize = true;
             summaryPresentLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             summaryPresentLabel.ForeColor = Color.ForestGreen;
-            summaryPresentLabel.Location = new Point(179, 21);
+            summaryPresentLabel.Location = new Point(157, 16);
             summaryPresentLabel.Name = "summaryPresentLabel";
-            summaryPresentLabel.Size = new Size(76, 20);
+            summaryPresentLabel.Size = new Size(59, 15);
             summaryPresentLabel.TabIndex = 1;
             summaryPresentLabel.Text = "Present: 0";
             summaryPresentLabel.Click += summaryPresentLabel_Click;
@@ -998,9 +970,9 @@ namespace IUIS.Modules.Team6.Forms
             summaryDailyLabel.AutoSize = true;
             summaryDailyLabel.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             summaryDailyLabel.ForeColor = Color.FromArgb(139, 0, 26);
-            summaryDailyLabel.Location = new Point(17, 20);
+            summaryDailyLabel.Location = new Point(15, 15);
             summaryDailyLabel.Name = "summaryDailyLabel";
-            summaryDailyLabel.Size = new Size(146, 20);
+            summaryDailyLabel.Size = new Size(107, 15);
             summaryDailyLabel.TabIndex = 0;
             summaryDailyLabel.Text = "👤 Daily Summary:";
             // 
@@ -1031,8 +1003,7 @@ namespace IUIS.Modules.Team6.Forms
             dataGridViewCellStyle22.WrapMode = DataGridViewTriState.False;
             DGV_AttendanceList.DefaultCellStyle = dataGridViewCellStyle22;
             DGV_AttendanceList.EnableHeadersVisualStyles = false;
-            DGV_AttendanceList.Location = new Point(17, 179);
-            DGV_AttendanceList.Margin = new Padding(3, 4, 3, 4);
+            DGV_AttendanceList.Location = new Point(15, 134);
             DGV_AttendanceList.Name = "DGV_AttendanceList";
             dataGridViewCellStyle23.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle23.BackColor = SystemColors.Control;
@@ -1048,7 +1019,7 @@ namespace IUIS.Modules.Team6.Forms
             dataGridViewCellStyle24.SelectionBackColor = Color.FromArgb(255, 255, 192);
             dataGridViewCellStyle24.SelectionForeColor = Color.Black;
             DGV_AttendanceList.RowsDefaultCellStyle = dataGridViewCellStyle24;
-            DGV_AttendanceList.Size = new Size(1089, 349);
+            DGV_AttendanceList.Size = new Size(953, 262);
             DGV_AttendanceList.TabIndex = 1;
             // 
             // attFilterPanel
@@ -1062,19 +1033,17 @@ namespace IUIS.Modules.Team6.Forms
             attFilterPanel.Controls.Add(attDeptLabel);
             attFilterPanel.Controls.Add(DTP_AttDate);
             attFilterPanel.Controls.Add(attDateLabel);
-            attFilterPanel.Location = new Point(17, 8);
-            attFilterPanel.Margin = new Padding(3, 4, 3, 4);
+            attFilterPanel.Location = new Point(15, 6);
             attFilterPanel.Name = "attFilterPanel";
-            attFilterPanel.Size = new Size(1089, 119);
+            attFilterPanel.Size = new Size(953, 90);
             attFilterPanel.TabIndex = 0;
             // 
             // TB_AttSearch
             // 
-            TB_AttSearch.Location = new Point(802, 48);
-            TB_AttSearch.Margin = new Padding(3, 4, 3, 4);
+            TB_AttSearch.Location = new Point(702, 36);
             TB_AttSearch.Name = "TB_AttSearch";
             TB_AttSearch.PlaceholderText = "Search by name or ID...";
-            TB_AttSearch.Size = new Size(269, 27);
+            TB_AttSearch.Size = new Size(236, 23);
             TB_AttSearch.TabIndex = 8;
             // 
             // attSearchLabel
@@ -1082,19 +1051,18 @@ namespace IUIS.Modules.Team6.Forms
             attSearchLabel.AutoSize = true;
             attSearchLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             attSearchLabel.ForeColor = Color.FromArgb(139, 0, 26);
-            attSearchLabel.Location = new Point(802, 24);
+            attSearchLabel.Location = new Point(702, 18);
             attSearchLabel.Name = "attSearchLabel";
-            attSearchLabel.Size = new Size(59, 20);
+            attSearchLabel.Size = new Size(46, 15);
             attSearchLabel.TabIndex = 7;
             attSearchLabel.Text = "Search:";
             // 
             // CB_AttStatus
             // 
             CB_AttStatus.FormattingEnabled = true;
-            CB_AttStatus.Location = new Point(551, 48);
-            CB_AttStatus.Margin = new Padding(3, 4, 3, 4);
+            CB_AttStatus.Location = new Point(482, 36);
             CB_AttStatus.Name = "CB_AttStatus";
-            CB_AttStatus.Size = new Size(228, 28);
+            CB_AttStatus.Size = new Size(200, 23);
             CB_AttStatus.TabIndex = 6;
             // 
             // attStatusLabel
@@ -1102,19 +1070,18 @@ namespace IUIS.Modules.Team6.Forms
             attStatusLabel.AutoSize = true;
             attStatusLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             attStatusLabel.ForeColor = Color.FromArgb(139, 0, 26);
-            attStatusLabel.Location = new Point(551, 24);
+            attStatusLabel.Location = new Point(482, 18);
             attStatusLabel.Name = "attStatusLabel";
-            attStatusLabel.Size = new Size(54, 20);
+            attStatusLabel.Size = new Size(43, 15);
             attStatusLabel.TabIndex = 5;
             attStatusLabel.Text = "Status:";
             // 
             // CB_AttDepartment
             // 
             CB_AttDepartment.FormattingEnabled = true;
-            CB_AttDepartment.Location = new Point(276, 48);
-            CB_AttDepartment.Margin = new Padding(3, 4, 3, 4);
+            CB_AttDepartment.Location = new Point(242, 36);
             CB_AttDepartment.Name = "CB_AttDepartment";
-            CB_AttDepartment.Size = new Size(251, 28);
+            CB_AttDepartment.Size = new Size(220, 23);
             CB_AttDepartment.TabIndex = 4;
             // 
             // attDeptLabel
@@ -1122,19 +1089,18 @@ namespace IUIS.Modules.Team6.Forms
             attDeptLabel.AutoSize = true;
             attDeptLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             attDeptLabel.ForeColor = Color.FromArgb(139, 0, 26);
-            attDeptLabel.Location = new Point(276, 24);
+            attDeptLabel.Location = new Point(242, 18);
             attDeptLabel.Name = "attDeptLabel";
-            attDeptLabel.Size = new Size(95, 20);
+            attDeptLabel.Size = new Size(74, 15);
             attDeptLabel.TabIndex = 3;
             attDeptLabel.Text = "Department:";
             // 
             // DTP_AttDate
             // 
             DTP_AttDate.Format = DateTimePickerFormat.Short;
-            DTP_AttDate.Location = new Point(9, 48);
-            DTP_AttDate.Margin = new Padding(3, 4, 3, 4);
+            DTP_AttDate.Location = new Point(8, 36);
             DTP_AttDate.Name = "DTP_AttDate";
-            DTP_AttDate.Size = new Size(251, 27);
+            DTP_AttDate.Size = new Size(220, 23);
             DTP_AttDate.TabIndex = 1;
             // 
             // attDateLabel
@@ -1142,9 +1108,9 @@ namespace IUIS.Modules.Team6.Forms
             attDateLabel.AutoSize = true;
             attDateLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             attDateLabel.ForeColor = Color.FromArgb(139, 0, 26);
-            attDateLabel.Location = new Point(9, 24);
+            attDateLabel.Location = new Point(8, 18);
             attDateLabel.Name = "attDateLabel";
-            attDateLabel.Size = new Size(45, 20);
+            attDateLabel.Size = new Size(35, 15);
             attDateLabel.TabIndex = 0;
             attDateLabel.Text = "Date:";
             // 
@@ -1154,11 +1120,10 @@ namespace IUIS.Modules.Team6.Forms
             reportsTab.Controls.Add(DGV_ReportList);
             reportsTab.Controls.Add(summaryStatsPanel);
             reportsTab.Controls.Add(reportFiltersPanel);
-            reportsTab.Location = new Point(4, 29);
-            reportsTab.Margin = new Padding(3, 4, 3, 4);
+            reportsTab.Location = new Point(4, 24);
             reportsTab.Name = "reportsTab";
-            reportsTab.Padding = new Padding(3, 4, 3, 4);
-            reportsTab.Size = new Size(1114, 693);
+            reportsTab.Padding = new Padding(3, 3, 3, 3);
+            reportsTab.Size = new Size(974, 516);
             reportsTab.TabIndex = 3;
             reportsTab.Text = "📊 Reports";
             reportsTab.UseVisualStyleBackColor = true;
@@ -1166,15 +1131,14 @@ namespace IUIS.Modules.Team6.Forms
             // exportCSVButton
             // 
             exportCSVButton.BackColor = Color.FromArgb(255, 185, 44);
+            exportCSVButton.FlatAppearance.BorderSize = 0;
+            exportCSVButton.FlatStyle = FlatStyle.Flat;
             exportCSVButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            exportCSVButton.Location = new Point(895, 637);
-            exportCSVButton.Margin = new Padding(3, 4, 3, 4);
+            exportCSVButton.Location = new Point(783, 478);
             exportCSVButton.Name = "exportCSVButton";
-            exportCSVButton.Size = new Size(171, 43);
+            exportCSVButton.Size = new Size(150, 32);
             exportCSVButton.TabIndex = 3;
             exportCSVButton.Text = "📤 Export to CSV";
-            exportCSVButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            exportCSVButton.FlatAppearance.BorderSize = 0;
             exportCSVButton.UseVisualStyleBackColor = false;
             // 
             // DGV_ReportList
@@ -1204,8 +1168,7 @@ namespace IUIS.Modules.Team6.Forms
             dataGridViewCellStyle27.WrapMode = DataGridViewTriState.False;
             DGV_ReportList.DefaultCellStyle = dataGridViewCellStyle27;
             DGV_ReportList.EnableHeadersVisualStyles = false;
-            DGV_ReportList.Location = new Point(9, 295);
-            DGV_ReportList.Margin = new Padding(3, 4, 3, 4);
+            DGV_ReportList.Location = new Point(8, 221);
             DGV_ReportList.Name = "DGV_ReportList";
             dataGridViewCellStyle28.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle28.BackColor = SystemColors.Control;
@@ -1221,7 +1184,7 @@ namespace IUIS.Modules.Team6.Forms
             dataGridViewCellStyle29.SelectionBackColor = Color.FromArgb(255, 255, 192);
             dataGridViewCellStyle29.SelectionForeColor = Color.Black;
             DGV_ReportList.RowsDefaultCellStyle = dataGridViewCellStyle29;
-            DGV_ReportList.Size = new Size(1097, 334);
+            DGV_ReportList.Size = new Size(960, 250);
             DGV_ReportList.TabIndex = 2;
             // 
             // summaryStatsPanel
@@ -1233,10 +1196,9 @@ namespace IUIS.Modules.Team6.Forms
             summaryStatsPanel.Controls.Add(statsAbsentLabel);
             summaryStatsPanel.Controls.Add(statsLateLabel);
             summaryStatsPanel.Controls.Add(statsPresentLabel);
-            summaryStatsPanel.Location = new Point(9, 196);
-            summaryStatsPanel.Margin = new Padding(3, 4, 3, 4);
+            summaryStatsPanel.Location = new Point(8, 147);
             summaryStatsPanel.Name = "summaryStatsPanel";
-            summaryStatsPanel.Size = new Size(1097, 91);
+            summaryStatsPanel.Size = new Size(960, 69);
             summaryStatsPanel.TabIndex = 1;
             // 
             // label11
@@ -1244,9 +1206,9 @@ namespace IUIS.Modules.Team6.Forms
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.FromArgb(139, 0, 26);
-            label11.Location = new Point(21, 10);
+            label11.Location = new Point(18, 8);
             label11.Name = "label11";
-            label11.Size = new Size(220, 28);
+            label11.Size = new Size(175, 21);
             label11.TabIndex = 5;
             label11.Text = "◔ REPORT SUMMARY";
             // 
@@ -1255,9 +1217,9 @@ namespace IUIS.Modules.Team6.Forms
             statsTotalHoursLabel.AutoSize = true;
             statsTotalHoursLabel.BackColor = Color.FromArgb(255, 255, 192);
             statsTotalHoursLabel.ForeColor = Color.Black;
-            statsTotalHoursLabel.Location = new Point(812, 51);
+            statsTotalHoursLabel.Location = new Point(710, 38);
             statsTotalHoursLabel.Name = "statsTotalHoursLabel";
-            statsTotalHoursLabel.Size = new Size(235, 20);
+            statsTotalHoursLabel.Size = new Size(180, 15);
             statsTotalHoursLabel.TabIndex = 4;
             statsTotalHoursLabel.Text = "⏱ Total Hours Rendered: 0.00 hrs";
             // 
@@ -1266,9 +1228,9 @@ namespace IUIS.Modules.Team6.Forms
             statsOnLeaveLabel.AutoSize = true;
             statsOnLeaveLabel.BackColor = Color.FromArgb(255, 255, 192);
             statsOnLeaveLabel.ForeColor = Color.FromArgb(55, 65, 81);
-            statsOnLeaveLabel.Location = new Point(606, 51);
+            statsOnLeaveLabel.Location = new Point(530, 38);
             statsOnLeaveLabel.Name = "statsOnLeaveLabel";
-            statsOnLeaveLabel.Size = new Size(147, 20);
+            statsOnLeaveLabel.Size = new Size(109, 15);
             statsOnLeaveLabel.TabIndex = 3;
             statsOnLeaveLabel.Text = "👤 Total On Leave: 0";
             // 
@@ -1277,9 +1239,9 @@ namespace IUIS.Modules.Team6.Forms
             statsAbsentLabel.AutoSize = true;
             statsAbsentLabel.BackColor = Color.FromArgb(255, 255, 192);
             statsAbsentLabel.ForeColor = Color.FromArgb(139, 0, 26);
-            statsAbsentLabel.Location = new Point(402, 51);
+            statsAbsentLabel.Location = new Point(352, 38);
             statsAbsentLabel.Name = "statsAbsentLabel";
-            statsAbsentLabel.Size = new Size(132, 20);
+            statsAbsentLabel.Size = new Size(99, 15);
             statsAbsentLabel.TabIndex = 2;
             statsAbsentLabel.Text = "🚫 Total Absent: 0";
             statsAbsentLabel.Click += statsAbsentLabel_Click;
@@ -1289,9 +1251,9 @@ namespace IUIS.Modules.Team6.Forms
             statsLateLabel.AutoSize = true;
             statsLateLabel.BackColor = Color.FromArgb(255, 255, 192);
             statsLateLabel.ForeColor = Color.FromArgb(255, 128, 0);
-            statsLateLabel.Location = new Point(223, 51);
+            statsLateLabel.Location = new Point(195, 38);
             statsLateLabel.Name = "statsLateLabel";
-            statsLateLabel.Size = new Size(114, 20);
+            statsLateLabel.Size = new Size(84, 15);
             statsLateLabel.TabIndex = 1;
             statsLateLabel.Text = "🕓 Total Late: 0";
             statsLateLabel.Click += statsLateLabel_Click;
@@ -1301,9 +1263,9 @@ namespace IUIS.Modules.Team6.Forms
             statsPresentLabel.AutoSize = true;
             statsPresentLabel.BackColor = Color.FromArgb(255, 255, 192);
             statsPresentLabel.ForeColor = Color.ForestGreen;
-            statsPresentLabel.Location = new Point(26, 51);
+            statsPresentLabel.Location = new Point(23, 38);
             statsPresentLabel.Name = "statsPresentLabel";
-            statsPresentLabel.Size = new Size(134, 20);
+            statsPresentLabel.Size = new Size(101, 15);
             statsPresentLabel.TabIndex = 0;
             statsPresentLabel.Text = "👥 Total Present: 0";
             statsPresentLabel.Click += statsPresentLabel_Click;
@@ -1323,10 +1285,9 @@ namespace IUIS.Modules.Team6.Forms
             reportFiltersPanel.Controls.Add(dateToLabel);
             reportFiltersPanel.Controls.Add(DTP_DateFrom);
             reportFiltersPanel.Controls.Add(dateFromLabel);
-            reportFiltersPanel.Location = new Point(9, 8);
-            reportFiltersPanel.Margin = new Padding(3, 4, 3, 4);
+            reportFiltersPanel.Location = new Point(8, 6);
             reportFiltersPanel.Name = "reportFiltersPanel";
-            reportFiltersPanel.Size = new Size(1097, 180);
+            reportFiltersPanel.Size = new Size(960, 136);
             reportFiltersPanel.TabIndex = 0;
             reportFiltersPanel.Paint += reportFiltersPanel_Paint;
             // 
@@ -1335,9 +1296,9 @@ namespace IUIS.Modules.Team6.Forms
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label12.ForeColor = Color.FromArgb(139, 0, 26);
-            label12.Location = new Point(22, 6);
+            label12.Location = new Point(19, 4);
             label12.Name = "label12";
-            label12.Size = new Size(195, 28);
+            label12.Size = new Size(153, 21);
             label12.TabIndex = 11;
             label12.Text = "▼  REPORT FILTERS";
             label12.Click += label12_Click;
@@ -1345,110 +1306,104 @@ namespace IUIS.Modules.Team6.Forms
             // generateReportButton
             // 
             generateReportButton.BackColor = Color.FromArgb(139, 0, 26);
+            generateReportButton.FlatAppearance.BorderSize = 0;
+            generateReportButton.FlatStyle = FlatStyle.Flat;
             generateReportButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             generateReportButton.ForeColor = SystemColors.ControlLightLight;
-            generateReportButton.Location = new Point(851, 126);
-            generateReportButton.Margin = new Padding(3, 4, 3, 4);
+            generateReportButton.Location = new Point(745, 94);
             generateReportButton.Name = "generateReportButton";
-            generateReportButton.Size = new Size(183, 36);
+            generateReportButton.Size = new Size(160, 27);
             generateReportButton.TabIndex = 10;
             generateReportButton.Text = "📄 Generate Report";
-            generateReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            generateReportButton.FlatAppearance.BorderSize = 0;
             generateReportButton.UseVisualStyleBackColor = false;
             // 
             // CB_ReportStatus
             // 
             CB_ReportStatus.FormattingEnabled = true;
-            CB_ReportStatus.Location = new Point(576, 134);
-            CB_ReportStatus.Margin = new Padding(3, 4, 3, 4);
+            CB_ReportStatus.Location = new Point(504, 100);
             CB_ReportStatus.Name = "CB_ReportStatus";
-            CB_ReportStatus.Size = new Size(205, 28);
+            CB_ReportStatus.Size = new Size(180, 23);
             CB_ReportStatus.TabIndex = 9;
             // 
             // reportStatusLabel
             // 
             reportStatusLabel.AutoSize = true;
             reportStatusLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            reportStatusLabel.Location = new Point(576, 112);
+            reportStatusLabel.Location = new Point(504, 84);
             reportStatusLabel.Name = "reportStatusLabel";
-            reportStatusLabel.Size = new Size(54, 20);
+            reportStatusLabel.Size = new Size(43, 15);
             reportStatusLabel.TabIndex = 8;
             reportStatusLabel.Text = "Status:";
             // 
             // CB_ReportEmployee
             // 
             CB_ReportEmployee.FormattingEnabled = true;
-            CB_ReportEmployee.Location = new Point(299, 134);
-            CB_ReportEmployee.Margin = new Padding(3, 4, 3, 4);
+            CB_ReportEmployee.Location = new Point(262, 100);
             CB_ReportEmployee.Name = "CB_ReportEmployee";
-            CB_ReportEmployee.Size = new Size(268, 28);
+            CB_ReportEmployee.Size = new Size(235, 23);
             CB_ReportEmployee.TabIndex = 7;
             // 
             // reportEmpLabel
             // 
             reportEmpLabel.AutoSize = true;
             reportEmpLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            reportEmpLabel.Location = new Point(299, 112);
+            reportEmpLabel.Location = new Point(262, 84);
             reportEmpLabel.Name = "reportEmpLabel";
-            reportEmpLabel.Size = new Size(80, 20);
+            reportEmpLabel.Size = new Size(62, 15);
             reportEmpLabel.TabIndex = 6;
             reportEmpLabel.Text = "Employee:";
             // 
             // CB_ReportDepartment
             // 
             CB_ReportDepartment.FormattingEnabled = true;
-            CB_ReportDepartment.Location = new Point(21, 134);
-            CB_ReportDepartment.Margin = new Padding(3, 4, 3, 4);
+            CB_ReportDepartment.Location = new Point(18, 100);
             CB_ReportDepartment.Name = "CB_ReportDepartment";
-            CB_ReportDepartment.Size = new Size(268, 28);
+            CB_ReportDepartment.Size = new Size(235, 23);
             CB_ReportDepartment.TabIndex = 5;
             // 
             // reportDeptLabel
             // 
             reportDeptLabel.AutoSize = true;
             reportDeptLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            reportDeptLabel.Location = new Point(21, 112);
+            reportDeptLabel.Location = new Point(18, 84);
             reportDeptLabel.Name = "reportDeptLabel";
-            reportDeptLabel.Size = new Size(95, 20);
+            reportDeptLabel.Size = new Size(74, 15);
             reportDeptLabel.TabIndex = 4;
             reportDeptLabel.Text = "Department:";
             // 
             // DTP_DateTo
             // 
             DTP_DateTo.Format = DateTimePickerFormat.Short;
-            DTP_DateTo.Location = new Point(299, 64);
-            DTP_DateTo.Margin = new Padding(3, 4, 3, 4);
+            DTP_DateTo.Location = new Point(262, 48);
             DTP_DateTo.Name = "DTP_DateTo";
-            DTP_DateTo.Size = new Size(268, 27);
+            DTP_DateTo.Size = new Size(235, 23);
             DTP_DateTo.TabIndex = 3;
             // 
             // dateToLabel
             // 
             dateToLabel.AutoSize = true;
             dateToLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dateToLabel.Location = new Point(299, 40);
+            dateToLabel.Location = new Point(262, 30);
             dateToLabel.Name = "dateToLabel";
-            dateToLabel.Size = new Size(65, 20);
+            dateToLabel.Size = new Size(51, 15);
             dateToLabel.TabIndex = 2;
             dateToLabel.Text = "Date To:";
             // 
             // DTP_DateFrom
             // 
             DTP_DateFrom.Format = DateTimePickerFormat.Short;
-            DTP_DateFrom.Location = new Point(21, 64);
-            DTP_DateFrom.Margin = new Padding(3, 4, 3, 4);
+            DTP_DateFrom.Location = new Point(18, 48);
             DTP_DateFrom.Name = "DTP_DateFrom";
-            DTP_DateFrom.Size = new Size(268, 27);
+            DTP_DateFrom.Size = new Size(235, 23);
             DTP_DateFrom.TabIndex = 1;
             // 
             // dateFromLabel
             // 
             dateFromLabel.AutoSize = true;
             dateFromLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dateFromLabel.Location = new Point(21, 43);
+            dateFromLabel.Location = new Point(18, 32);
             dateFromLabel.Name = "dateFromLabel";
-            dateFromLabel.Size = new Size(85, 20);
+            dateFromLabel.Size = new Size(66, 15);
             dateFromLabel.TabIndex = 0;
             dateFromLabel.Text = "Date From:";
             // 
@@ -1456,30 +1411,30 @@ namespace IUIS.Modules.Team6.Forms
             // 
             mainStatusStrip.ImageScalingSize = new Size(20, 20);
             mainStatusStrip.Items.AddRange(new ToolStripItem[] { statusBarLabel });
-            mainStatusStrip.Location = new Point(0, 726);
+            mainStatusStrip.Location = new Point(0, 548);
             mainStatusStrip.Name = "mainStatusStrip";
-            mainStatusStrip.Padding = new Padding(1, 0, 16, 0);
-            mainStatusStrip.Size = new Size(1122, 26);
+            mainStatusStrip.Size = new Size(984, 22);
             mainStatusStrip.TabIndex = 1;
             mainStatusStrip.Text = "statusStrip1";
             // 
             // statusBarLabel
             // 
             statusBarLabel.Name = "statusBarLabel";
-            statusBarLabel.Size = new Size(50, 20);
+            statusBarLabel.Size = new Size(39, 17);
             statusBarLabel.Text = "Ready";
             // 
             // EmployeeAttendanceForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1122, 752);
+            ClientSize = new Size(984, 570);
             Controls.Add(TabControl);
             Controls.Add(mainStatusStrip);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 4, 3, 4);
-            MaximumSize = new Size(1140, 799);
-            MinimumSize = new Size(1140, 799);
+            MaximizeBox = false;
+            MaximumSize = new Size(1000, 609);
+            MinimizeBox = false;
+            MinimumSize = new Size(1000, 609);
             Name = "EmployeeAttendanceForm";
             Text = "Employee & Attendance Management Module";
             Load += Form1_Load;

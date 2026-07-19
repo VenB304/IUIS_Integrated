@@ -234,6 +234,7 @@ namespace IUIS.Shell.Forms
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MaximumSize = new Size(480, 560);
+            MinimizeBox = false;
             MinimumSize = new Size(480, 560);
             Name = "LoginForm";
             StartPosition = FormStartPosition.CenterScreen;
