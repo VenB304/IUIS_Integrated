@@ -82,6 +82,11 @@
       Command="dotnet build &quot;$(MSBuildThisFileDirectory)..\Modules\library-management-module\LibraryManagementSystem.csproj&quot; --configuration $(Configuration) --verbosity quiet"
       ContinueOnError="true" />
 
+    <Message Text="[IUIS] Building Team 7 — Medical Services..." Importance="high" />
+    <Exec
+      Command="dotnet build &quot;$(MSBuildThisFileDirectory)..\Modules\IUIS.Modules.Team7\csharp-crud-json.csproj&quot; --configuration $(Configuration) --verbosity quiet"
+      ContinueOnError="true" />
+
   </Target>
 
 </Project>

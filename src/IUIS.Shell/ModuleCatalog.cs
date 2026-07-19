@@ -65,8 +65,12 @@ namespace IUIS.Shell
                 // Team 6 — the reference in-process module.
                 .Register(new Team6Module())
 
-                .Register(ExternalTeam(7, "Medical Services",
-                    "Manage medical records and clearances", "⚕️"))
+                // Team 7 — repo: IUIS.Modules.Team7, exe: csharp-crud-json.exe
+                .Register(ExternalTeamNamed(7, "Medical Services",
+                    "Manage medical records and clearances", "⚕️",
+                    repoFolder: "IUIS.Modules.Team7",
+                    exeName:    "csharp-crud-json.exe",
+                    framework:  "net8.0-windows"))
 
                 // Team 8 — converted to an in-process module.
                 .Register(new Team8Module());
