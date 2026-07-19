@@ -60,7 +60,7 @@ namespace IUIS.Shell.Forms
             _header.Dock = DockStyle.Top;
             _header.Location = new Point(0, 0);
             _header.Name = "_header";
-            _header.Size = new Size(1084, 100);
+            _header.Size = new Size(984, 100);
             _header.TabIndex = 0;
             // 
             // _rightPanel
@@ -72,24 +72,23 @@ namespace IUIS.Shell.Forms
             _rightPanel.Controls.Add(_lblWelcome);
             _rightPanel.Dock = DockStyle.Right;
             _rightPanel.FlowDirection = FlowDirection.RightToLeft;
-            _rightPanel.Location = new Point(877, 0);
+            _rightPanel.Location = new Point(867, 0);
             _rightPanel.Name = "_rightPanel";
             _rightPanel.Padding = new Padding(0, 33, 25, 0);
-            _rightPanel.Size = new Size(207, 100);
+            _rightPanel.Size = new Size(117, 100);
             _rightPanel.TabIndex = 0;
             _rightPanel.WrapContents = false;
             // 
             // _btnLogout
             // 
             _btnLogout.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            _btnLogout.Location = new Point(102, 33);
+            _btnLogout.Location = new Point(12, 33);
             _btnLogout.Margin = new Padding(0);
             _btnLogout.Name = "_btnLogout";
             _btnLogout.Size = new Size(80, 30);
             _btnLogout.TabIndex = 0;
             _btnLogout.Text = "Log Out";
             _btnLogout.Click += BtnLogout_Click;
-
             // 
             // _lblWelcome
             // 
@@ -141,13 +140,13 @@ namespace IUIS.Shell.Forms
             _cardsPanel.Location = new Point(0, 100);
             _cardsPanel.Name = "_cardsPanel";
             _cardsPanel.Padding = new Padding(35);
-            _cardsPanel.Size = new Size(1084, 861);
+            _cardsPanel.Size = new Size(984, 861);
             _cardsPanel.TabIndex = 1;
             // 
             // GlobalDashboardForm
             // 
             BackColor = Color.FromArgb(245, 245, 245);
-            ClientSize = new Size(1084, 961);
+            ClientSize = new Size(984, 961);
             Controls.Add(_cardsPanel);
             Controls.Add(_header);
             MaximizeBox = false;
