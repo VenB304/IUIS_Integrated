@@ -36,7 +36,6 @@ namespace IUIS.Shell.Forms
             _header = new Panel();
             _rightPanel = new FlowLayoutPanel();
             _btnLogout = new Button();
-            _btnRefresh = new Button();
             _lblWelcome = new Label();
             _lblHeaderTitle = new Label();
             _lblClock = new Label();
@@ -70,7 +69,6 @@ namespace IUIS.Shell.Forms
             _rightPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             _rightPanel.BackColor = Color.Transparent;
             _rightPanel.Controls.Add(_btnLogout);
-            _rightPanel.Controls.Add(_btnRefresh);
             _rightPanel.Controls.Add(_lblWelcome);
             _rightPanel.Dock = DockStyle.Right;
             _rightPanel.FlowDirection = FlowDirection.RightToLeft;
@@ -91,17 +89,7 @@ namespace IUIS.Shell.Forms
             _btnLogout.TabIndex = 0;
             _btnLogout.Text = "Log Out";
             _btnLogout.Click += BtnLogout_Click;
-            // 
-            // _btnRefresh
-            // 
-            _btnRefresh.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
-            _btnRefresh.Location = new Point(12, 33);
-            _btnRefresh.Margin = new Padding(0, 0, 10, 0);
-            _btnRefresh.Name = "_btnRefresh";
-            _btnRefresh.Size = new Size(80, 30);
-            _btnRefresh.TabIndex = 1;
-            _btnRefresh.Text = "Refresh";
-            _btnRefresh.Click += BtnRefresh_Click;
+
             // 
             // _lblWelcome
             // 
@@ -181,7 +169,6 @@ namespace IUIS.Shell.Forms
         private Panel _header;
         private FlowLayoutPanel _rightPanel;
         private Button _btnLogout;
-        private Button _btnRefresh;
         private Label _lblWelcome;
         private Label _lblHeaderTitle;
         private Label _lblClock;

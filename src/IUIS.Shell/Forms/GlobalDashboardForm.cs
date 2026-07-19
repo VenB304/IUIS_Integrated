@@ -240,9 +240,5 @@ namespace IUIS.Shell.Forms
             LogoutRequested = true;
             Close();
         }
-
-        // During integration week a teammate may build their .exe while the
-        // dashboard is already open; this re-checks availability without a restart.
-        private void BtnRefresh_Click(object? sender, EventArgs e) => RenderCards();
     }
 }
