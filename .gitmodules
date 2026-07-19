@@ -10,3 +10,6 @@
 [submodule "modules/Team2_Teacher_Management"]
 	path = modules/Team2_Teacher_Management
 	url = https://github.com/jomar999/Team2_Teacher_Management
+[submodule "modules/AcademicManagementSystem"]
+	path = modules/AcademicManagementSystem
+	url = https://github.com/Yelsha111/AcademicManagementSystem

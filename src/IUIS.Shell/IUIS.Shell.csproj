@@ -57,6 +57,11 @@
       Command="dotnet build &quot;$(MSBuildThisFileDirectory)..\..\modules\Team2_Teacher_Management\Teacher_Management\Teacher_Management.csproj&quot; --configuration $(Configuration) --verbosity quiet"
       ContinueOnError="true" />
 
+    <Message Text="[IUIS] Building Team 3 — Academic Management..." Importance="high" />
+    <Exec
+      Command="dotnet build &quot;$(MSBuildThisFileDirectory)..\..\modules\AcademicManagementSystem\AcademicManagement\AcademicManagement.csproj&quot; --configuration $(Configuration) --verbosity quiet"
+      ContinueOnError="true" />
+
     <Message Text="[IUIS] Building Team 4 — Registrar Management..." Importance="high" />
     <Exec
       Command="dotnet build &quot;$(MSBuildThisFileDirectory)..\..\modules\RegistrarManagement\RegistrarManagement.csproj&quot; --configuration $(Configuration) --verbosity quiet"

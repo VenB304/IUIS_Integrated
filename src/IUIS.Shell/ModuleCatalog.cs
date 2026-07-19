@@ -41,8 +41,13 @@ namespace IUIS.Shell
                     exeName:      "Teacher_Management.exe",
                     nestedFolder: "Teacher_Management",
                     framework:    "net8.0-windows"))
-                .Register(ExternalTeam(3, "Academic Management",
-                    "Manage programs, courses, subjects, and curriculum", "📖"))
+                // Team 3 — repo: AcademicManagementSystem, project subfolder: AcademicManagement
+                .Register(ExternalTeamNamed(3, "Academic Management",
+                    "Manage programs, courses, subjects, and curriculum", "📖",
+                    repoFolder:   "AcademicManagementSystem",
+                    exeName:      "AcademicManagement.exe",
+                    framework:    "net10.0-windows",
+                    nestedFolder: "AcademicManagement"))
                 // Team 4 — repo: RegistrarManagement, exe: RegistrarManagement.exe
                 .Register(ExternalTeamNamed(4, "Registrar Management",
                     "Manage academic records and student clearances", "🏛️",
