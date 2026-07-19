@@ -43,6 +43,8 @@ namespace IUIS.Shell.Forms
 
             _clockTimer.Tick += (s, e) => _lblClock.Text = FormatNow();
             _clockTimer.Start();
+
+            _cardsPanel.ClientSizeChanged += (s, e) => CenterCards();
         }
 
         protected override void OnFormClosed(FormClosedEventArgs e)
@@ -75,6 +77,31 @@ namespace IUIS.Shell.Forms
                 _cardsPanel.Controls.Add(CreateModuleCard(module));
 
             _cardsPanel.ResumeLayout();
+            CenterCards();
+        }
+
+        private void CenterCards()
+        {
+            if (_cardsPanel.Controls.Count == 0)
+                return;
+
+            int clientWidth = _cardsPanel.ClientSize.Width;
+            int cardTotalWidth = 430; // 400 width + 15 margin * 2
+            int totalCards = _cardsPanel.Controls.Count;
+
+            int cols = clientWidth / cardTotalWidth;
+            if (cols <= 0) cols = 1;
+            if (cols > totalCards) cols = totalCards;
+
+            int usedWidth = cols * cardTotalWidth;
+            int remaining = clientWidth - usedWidth;
+
+            int leftPadding = Math.Max(35, remaining / 2);
+
+            if (_cardsPanel.Padding.Left != leftPadding)
+            {
+                _cardsPanel.Padding = new Padding(leftPadding, 35, 35, 35);
+            }
         }
 
         private Button CreateModuleCard(IModule module)
