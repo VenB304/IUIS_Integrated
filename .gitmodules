@@ -15,4 +15,4 @@
 	url = https://github.com/Yelsha111/AcademicManagementSystem
 [submodule "src/Modules/IUIS.Modules.Team7"]
 	path = src/Modules/IUIS.Modules.Team7
-	url = https://github.com/ronald015-ui/IUIS.Modules.Team7
+	url = https://github.com/samsonjeff/csharp-crud-json
