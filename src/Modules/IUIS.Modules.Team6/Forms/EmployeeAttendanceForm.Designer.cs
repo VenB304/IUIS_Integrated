@@ -284,6 +284,8 @@ namespace IUIS.Modules.Team6.Forms
             viewEmployeeDetailsButton.Size = new Size(209, 43);
             viewEmployeeDetailsButton.TabIndex = 5;
             viewEmployeeDetailsButton.Text = "👁️ View Details";
+            viewEmployeeDetailsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            viewEmployeeDetailsButton.FlatAppearance.BorderSize = 0;
             viewEmployeeDetailsButton.UseVisualStyleBackColor = false;
             // 
             // deleteEmployeeButton
@@ -299,6 +301,8 @@ namespace IUIS.Modules.Team6.Forms
             deleteEmployeeButton.Size = new Size(194, 43);
             deleteEmployeeButton.TabIndex = 4;
             deleteEmployeeButton.Text = "❌ Delete Employee";
+            deleteEmployeeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            deleteEmployeeButton.FlatAppearance.BorderSize = 0;
             deleteEmployeeButton.UseVisualStyleBackColor = false;
             deleteEmployeeButton.Click += deleteEmployeeButton_Click;
             // 
@@ -315,6 +319,8 @@ namespace IUIS.Modules.Team6.Forms
             editEmployeeButton.Size = new Size(179, 43);
             editEmployeeButton.TabIndex = 3;
             editEmployeeButton.Text = "✏️ Edit";
+            editEmployeeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            editEmployeeButton.FlatAppearance.BorderSize = 0;
             editEmployeeButton.UseVisualStyleBackColor = false;
             // 
             // addEmployeeButton
@@ -329,6 +335,8 @@ namespace IUIS.Modules.Team6.Forms
             addEmployeeButton.Size = new Size(203, 43);
             addEmployeeButton.TabIndex = 2;
             addEmployeeButton.Text = "✚ Add Employee";
+            addEmployeeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            addEmployeeButton.FlatAppearance.BorderSize = 0;
             addEmployeeButton.UseVisualStyleBackColor = false;
             // 
             // panel1
@@ -423,6 +431,8 @@ namespace IUIS.Modules.Team6.Forms
             clearFilterButton.Size = new Size(241, 33);
             clearFilterButton.TabIndex = 6;
             clearFilterButton.Text = "⟲ Clear Filters";
+            clearFilterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            clearFilterButton.FlatAppearance.BorderSize = 0;
             clearFilterButton.UseVisualStyleBackColor = false;
             // 
             // CB_Status
@@ -629,6 +639,8 @@ namespace IUIS.Modules.Team6.Forms
             deleteDepartmentButton.Size = new Size(217, 43);
             deleteDepartmentButton.TabIndex = 4;
             deleteDepartmentButton.Text = "❌ Delete Department";
+            deleteDepartmentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            deleteDepartmentButton.FlatAppearance.BorderSize = 0;
             deleteDepartmentButton.UseVisualStyleBackColor = false;
             // 
             // editDepartmentButton
@@ -642,6 +654,8 @@ namespace IUIS.Modules.Team6.Forms
             editDepartmentButton.Size = new Size(146, 43);
             editDepartmentButton.TabIndex = 3;
             editDepartmentButton.Text = "✏️ Edit";
+            editDepartmentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            editDepartmentButton.FlatAppearance.BorderSize = 0;
             editDepartmentButton.UseVisualStyleBackColor = false;
             // 
             // addDepartmentButton
@@ -655,6 +669,8 @@ namespace IUIS.Modules.Team6.Forms
             addDepartmentButton.Size = new Size(217, 43);
             addDepartmentButton.TabIndex = 2;
             addDepartmentButton.Text = "✚ Add Department";
+            addDepartmentButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            addDepartmentButton.FlatAppearance.BorderSize = 0;
             addDepartmentButton.UseVisualStyleBackColor = false;
             // 
             // panel2
@@ -752,6 +768,8 @@ namespace IUIS.Modules.Team6.Forms
             clearDeptFilterButton.Size = new Size(241, 31);
             clearDeptFilterButton.TabIndex = 6;
             clearDeptFilterButton.Text = "⟲ Clear Filters";
+            clearDeptFilterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            clearDeptFilterButton.FlatAppearance.BorderSize = 0;
             clearDeptFilterButton.UseVisualStyleBackColor = false;
             // 
             // CB_Location
@@ -880,6 +898,8 @@ namespace IUIS.Modules.Team6.Forms
             markAbsentLeaveButton.Size = new Size(240, 43);
             markAbsentLeaveButton.TabIndex = 5;
             markAbsentLeaveButton.Text = "👤 Mark Absent / On Leave";
+            markAbsentLeaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            markAbsentLeaveButton.FlatAppearance.BorderSize = 0;
             markAbsentLeaveButton.UseVisualStyleBackColor = false;
             // 
             // recordTimeOutButton
@@ -893,6 +913,8 @@ namespace IUIS.Modules.Team6.Forms
             recordTimeOutButton.Size = new Size(217, 43);
             recordTimeOutButton.TabIndex = 4;
             recordTimeOutButton.Text = "➜] Record Time Out";
+            recordTimeOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            recordTimeOutButton.FlatAppearance.BorderSize = 0;
             recordTimeOutButton.UseVisualStyleBackColor = false;
             // 
             // recordTimeInButton
@@ -906,6 +928,8 @@ namespace IUIS.Modules.Team6.Forms
             recordTimeInButton.Size = new Size(225, 43);
             recordTimeInButton.TabIndex = 3;
             recordTimeInButton.Text = "➜] Record Time In";
+            recordTimeInButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            recordTimeInButton.FlatAppearance.BorderSize = 0;
             recordTimeInButton.UseVisualStyleBackColor = false;
             // 
             // attSummaryPanel
@@ -1149,6 +1173,8 @@ namespace IUIS.Modules.Team6.Forms
             exportCSVButton.Size = new Size(171, 43);
             exportCSVButton.TabIndex = 3;
             exportCSVButton.Text = "📤 Export to CSV";
+            exportCSVButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            exportCSVButton.FlatAppearance.BorderSize = 0;
             exportCSVButton.UseVisualStyleBackColor = false;
             // 
             // DGV_ReportList
@@ -1327,6 +1353,8 @@ namespace IUIS.Modules.Team6.Forms
             generateReportButton.Size = new Size(183, 36);
             generateReportButton.TabIndex = 10;
             generateReportButton.Text = "📄 Generate Report";
+            generateReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            generateReportButton.FlatAppearance.BorderSize = 0;
             generateReportButton.UseVisualStyleBackColor = false;
             // 
             // CB_ReportStatus
@@ -1585,3 +1613,5 @@ namespace IUIS.Modules.Team6.Forms
         private Label label12;
     }
 }
+
+

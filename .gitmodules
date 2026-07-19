@@ -1,15 +1,15 @@
 [submodule "modules/RegistrarManagement"]
-	path = modules/RegistrarManagement
+	path = src/Modules/RegistrarManagement
 	url = https://github.com/kurtvergara06-rgb/RegistrarManagement
 [submodule "modules/library-management-module"]
-	path = modules/library-management-module
+	path = src/Modules/library-management-module
 	url = https://github.com/scoop23/library-management-module
 [submodule "modules/Team1_StudentManagementModule"]
-	path = modules/Team1_StudentManagementModule
+	path = src/Modules/Team1_StudentManagementModule
 	url = https://github.com/Chiharu19/Team1_StudentManagementModule
 [submodule "modules/Team2_Teacher_Management"]
-	path = modules/Team2_Teacher_Management
+	path = src/Modules/Team2_Teacher_Management
 	url = https://github.com/jomar999/Team2_Teacher_Management
 [submodule "modules/AcademicManagementSystem"]
-	path = modules/AcademicManagementSystem
+	path = src/Modules/AcademicManagementSystem
 	url = https://github.com/Yelsha111/AcademicManagementSystem

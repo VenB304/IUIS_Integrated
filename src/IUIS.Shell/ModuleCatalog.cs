@@ -176,12 +176,13 @@ namespace IUIS.Shell
             };
 
             // Three layouts checked in order:
-            //   1. Git submodule: modules/<repoFolder>/[nested/]bin/...  (canonical)
+            //   1. Git submodule: src/Modules/<repoFolder>/[nested/]bin/...  (canonical)
             //   2. Sibling clone: <repoFolder>/[nested/]bin/...
             //   3. Nested clone:  <repoFolder>/<repoFolder>/[nested/]bin/...
             string[] shapes =
             [
-                Path.Combine("modules", repoFolder, binSegment),
+                Path.Combine("src", "Modules", repoFolder, binSegment),
+                Path.Combine("Modules", repoFolder, binSegment),
                 Path.Combine(repoFolder, binSegment),
                 Path.Combine(repoFolder, repoFolder, binSegment)
             ];

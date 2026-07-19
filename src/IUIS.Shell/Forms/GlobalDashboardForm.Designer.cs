@@ -31,6 +31,7 @@ namespace IUIS.Shell.Forms
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GlobalDashboardForm));
             _clockTimer = new System.Windows.Forms.Timer(components);
             _header = new Panel();
             _rightPanel = new FlowLayoutPanel();
@@ -39,8 +40,8 @@ namespace IUIS.Shell.Forms
             _lblWelcome = new Label();
             _lblHeaderTitle = new Label();
             _lblClock = new Label();
-            _cardsPanel = new FlowLayoutPanel();
             _picLogo = new PictureBox();
+            _cardsPanel = new FlowLayoutPanel();
             _header.SuspendLayout();
             _rightPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)_picLogo).BeginInit();
@@ -60,7 +61,7 @@ namespace IUIS.Shell.Forms
             _header.Dock = DockStyle.Top;
             _header.Location = new Point(0, 0);
             _header.Name = "_header";
-            _header.Size = new Size(984, 100);
+            _header.Size = new Size(1084, 100);
             _header.TabIndex = 0;
             // 
             // _rightPanel
@@ -73,7 +74,7 @@ namespace IUIS.Shell.Forms
             _rightPanel.Controls.Add(_lblWelcome);
             _rightPanel.Dock = DockStyle.Right;
             _rightPanel.FlowDirection = FlowDirection.RightToLeft;
-            _rightPanel.Location = new Point(777, 0);
+            _rightPanel.Location = new Point(877, 0);
             _rightPanel.Name = "_rightPanel";
             _rightPanel.Padding = new Padding(0, 33, 25, 0);
             _rightPanel.Size = new Size(207, 100);
@@ -114,7 +115,7 @@ namespace IUIS.Shell.Forms
             _lblWelcome.TabIndex = 2;
             // 
             // _lblHeaderTitle
-            //
+            // 
             _lblHeaderTitle.AutoSize = true;
             _lblHeaderTitle.Font = new Font("Segoe UI Semibold", 22F, FontStyle.Bold);
             _lblHeaderTitle.ForeColor = Color.White;
@@ -123,9 +124,9 @@ namespace IUIS.Shell.Forms
             _lblHeaderTitle.Size = new Size(466, 41);
             _lblHeaderTitle.TabIndex = 1;
             _lblHeaderTitle.Text = "Batangas State University — IUIS";
-            //
+            // 
             // _lblClock
-            //
+            // 
             _lblClock.AutoSize = true;
             _lblClock.Font = new Font("Segoe UI", 10F);
             _lblClock.ForeColor = Color.FromArgb(220, 220, 220);
@@ -133,18 +134,18 @@ namespace IUIS.Shell.Forms
             _lblClock.Name = "_lblClock";
             _lblClock.Size = new Size(0, 19);
             _lblClock.TabIndex = 2;
-            //
+            // 
             // _picLogo
-            //
+            // 
             _picLogo.BackColor = Color.Transparent;
-            _picLogo.Image = IUIS.Shell.Assets.AppLogo.Load();
+            _picLogo.Image = (Image)resources.GetObject("_picLogo.Image");
             _picLogo.Location = new Point(25, 18);
             _picLogo.Name = "_picLogo";
             _picLogo.Size = new Size(64, 64);
             _picLogo.SizeMode = PictureBoxSizeMode.Zoom;
             _picLogo.TabIndex = 3;
             _picLogo.TabStop = false;
-            //
+            // 
             // _cardsPanel
             // 
             _cardsPanel.AutoScroll = true;
@@ -152,18 +153,18 @@ namespace IUIS.Shell.Forms
             _cardsPanel.Location = new Point(0, 100);
             _cardsPanel.Name = "_cardsPanel";
             _cardsPanel.Padding = new Padding(35);
-            _cardsPanel.Size = new Size(984, 861);
+            _cardsPanel.Size = new Size(1084, 861);
             _cardsPanel.TabIndex = 1;
             // 
             // GlobalDashboardForm
             // 
             BackColor = Color.FromArgb(245, 245, 245);
-            ClientSize = new Size(984, 961);
+            ClientSize = new Size(1084, 961);
             Controls.Add(_cardsPanel);
             Controls.Add(_header);
             Name = "GlobalDashboardForm";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Batangas State University — IUIS Dashboard";
+            Text = "Batangas State University - IUIS Dashboard";
             _header.ResumeLayout(false);
             _header.PerformLayout();
             _rightPanel.ResumeLayout(false);
