@@ -19,3 +19,6 @@
 [submodule "src/Modules/IUIS.Modules.Team8"]
 	path = src/Modules/IUIS.Modules.Team8
 	url = https://github.com/codeWithAmben/project102
+[submodule "src/Modules/IUIS.Modules.Team6"]
+	path = src/Modules/IUIS.Modules.Team6
+	url = https://github.com/VenB304/IUIS.Modules.Team6.git
