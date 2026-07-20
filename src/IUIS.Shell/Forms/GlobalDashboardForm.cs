@@ -134,35 +134,38 @@ namespace IUIS.Shell.Forms
 
             var lblTitle = new Label
             {
-                Text      = d.DisplayName,
-                Font      = BsuTheme.Heading,
-                AutoSize  = true,
-                Location  = new Point(15, 75),
-                ForeColor = available ? BsuTheme.DarkRed : Color.FromArgb(150, 150, 150),
-                BackColor = Color.Transparent
+                Text        = d.DisplayName,
+                Font        = BsuTheme.Heading,
+                AutoSize    = true,
+                Location    = new Point(15, 75),
+                ForeColor   = available ? BsuTheme.DarkRed : Color.FromArgb(150, 150, 150),
+                BackColor   = Color.Transparent,
+                UseMnemonic = false
             };
 
             var lblDesc = new Label
             {
-                Text      = d.Description,
-                Font      = new Font("Segoe UI", 10.5F),
-                AutoSize  = false,
-                Size      = new Size(360, 45),
-                Location  = new Point(18, 110),
-                ForeColor = Color.DimGray,
-                BackColor = Color.Transparent
+                Text        = d.Description,
+                Font        = new Font("Segoe UI", 10.5F),
+                AutoSize    = false,
+                Size        = new Size(360, 45),
+                Location    = new Point(18, 110),
+                ForeColor   = Color.DimGray,
+                BackColor   = Color.Transparent,
+                UseMnemonic = false
             };
 
             // Badge doubles as the team label and the "not built yet" warning,
             // so an unavailable module says who to chase.
             var lblBadge = new Label
             {
-                Text      = available ? d.Team : $"{d.Team} · not built yet",
-                Font      = new Font("Segoe UI", 8F, FontStyle.Bold),
-                AutoSize  = true,
-                Location  = new Point(300, 22),
-                ForeColor = available ? BsuTheme.MutedText : Color.FromArgb(190, 90, 90),
-                BackColor = Color.Transparent
+                Text        = available ? d.Team : $"{d.Team} · not built yet",
+                Font        = new Font("Segoe UI", 8F, FontStyle.Bold),
+                AutoSize    = true,
+                Location    = new Point(300, 22),
+                ForeColor   = available ? BsuTheme.MutedText : Color.FromArgb(190, 90, 90),
+                BackColor   = Color.Transparent,
+                UseMnemonic = false
             };
 
             card.Controls.AddRange([lblIcon, lblTitle, lblDesc, lblBadge]);
