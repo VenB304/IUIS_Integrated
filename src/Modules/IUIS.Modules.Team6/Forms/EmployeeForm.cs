@@ -156,7 +156,68 @@ namespace IUIS.Modules.Team6.Forms
                 return;
             }
 
-            double.TryParse(_txtHourlyRate.Text, out double hourlyRate);
+            if (_txtFirstName.Text.Any(char.IsDigit) ||
+                _txtMiddleName.Text.Any(char.IsDigit) ||
+                _txtLastName.Text.Any(char.IsDigit))
+            {
+                MessageBox.Show("Employee names (First Name, Middle Name, Last Name) cannot contain numbers.",
+                    "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DialogResult = DialogResult.None;
+                return;
+            }
+
+            var phone = _txtPhone.Text.Trim();
+            if (!string.IsNullOrEmpty(phone))
+            {
+                if (!System.Text.RegularExpressions.Regex.IsMatch(phone, @"^09\d{9}$"))
+                {
+                    MessageBox.Show("Contact number must be a valid Philippine mobile number starting with '09' followed by 9 digits (e.g., 09123456789).",
+                        "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    DialogResult = DialogResult.None;
+                    return;
+                }
+            }
+
+            if (_dtpBirthDate.Value > DateTime.Today)
+            {
+                MessageBox.Show("Birth Date cannot be in the future.",
+                    "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DialogResult = DialogResult.None;
+                return;
+            }
+
+            if (_dtpDateHired.Value < _dtpBirthDate.Value)
+            {
+                MessageBox.Show("Date Hired cannot be earlier than Birth Date.",
+                    "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                DialogResult = DialogResult.None;
+                return;
+            }
+
+            var email = _txtEmail.Text.Trim();
+            if (!string.IsNullOrEmpty(email))
+            {
+                if (!System.Text.RegularExpressions.Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$"))
+                {
+                    MessageBox.Show("Please enter a valid email address (e.g., employee@example.com).",
+                        "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    DialogResult = DialogResult.None;
+                    return;
+                }
+            }
+
+            double hourlyRate = 0;
+            var hourlyRateText = _txtHourlyRate.Text.Trim();
+            if (!string.IsNullOrEmpty(hourlyRateText))
+            {
+                if (!double.TryParse(hourlyRateText, out hourlyRate) || hourlyRate < 0)
+                {
+                    MessageBox.Show("Hourly rate must be a valid non-negative number.",
+                        "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    DialogResult = DialogResult.None;
+                    return;
+                }
+            }
 
             var deptName = _cbDepartment.SelectedItem?.ToString();
             var deptObj = _departments.FirstOrDefault(d => d.Name == deptName);

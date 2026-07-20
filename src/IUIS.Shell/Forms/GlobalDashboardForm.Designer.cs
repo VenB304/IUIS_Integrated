@@ -108,9 +108,9 @@ namespace IUIS.Shell.Forms
             _lblHeaderTitle.ForeColor = Color.White;
             _lblHeaderTitle.Location = new Point(105, 20);
             _lblHeaderTitle.Name = "_lblHeaderTitle";
-            _lblHeaderTitle.Size = new Size(466, 41);
+            _lblHeaderTitle.Size = new Size(448, 41);
             _lblHeaderTitle.TabIndex = 1;
-            _lblHeaderTitle.Text = "Batangas State University — IUIS";
+            _lblHeaderTitle.Text = "Batangas State University - IUIS";
             // 
             // _lblClock
             // 

@@ -80,7 +80,7 @@ namespace IUIS.Shell.Forms
             _lblFooter.Name = "_lblFooter";
             _lblFooter.Size = new Size(380, 16);
             _lblFooter.TabIndex = 13;
-            _lblFooter.Text = "Batangas State University  ·  CICS";
+            _lblFooter.Text = "Batangas State University - JPLPC Malvar";
             _lblFooter.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // _lblAttempts

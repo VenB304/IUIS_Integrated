@@ -74,6 +74,7 @@ namespace IUIS.Modules.Team6.Forms
             totalRecordValueLabel = new Label();
             totalRecordsLabel = new Label();
             clearFilterButton = new Button();
+            empRefreshBtn = new Button();
             CB_Status = new ComboBox();
             statusLabel = new Label();
             CB_Department = new ComboBox();
@@ -96,6 +97,7 @@ namespace IUIS.Modules.Team6.Forms
             totalDeptsValueLabel = new Label();
             totalDeptsLabel = new Label();
             clearDeptFilterButton = new Button();
+            deptRefreshBtn = new Button();
             CB_Location = new ComboBox();
             locationLabel = new Label();
             TB_DeptSearch = new TextBox();
@@ -196,7 +198,7 @@ namespace IUIS.Modules.Team6.Forms
             employeeTab.ForeColor = Color.FromArgb(139, 0, 26);
             employeeTab.Location = new Point(4, 24);
             employeeTab.Name = "employeeTab";
-            employeeTab.Padding = new Padding(3, 3, 3, 3);
+            employeeTab.Padding = new Padding(3);
             employeeTab.Size = new Size(976, 520);
             employeeTab.TabIndex = 0;
             employeeTab.Text = "👤 Employees";
@@ -343,6 +345,7 @@ namespace IUIS.Modules.Team6.Forms
             panel1.Controls.Add(totalRecordValueLabel);
             panel1.Controls.Add(totalRecordsLabel);
             panel1.Controls.Add(clearFilterButton);
+            panel1.Controls.Add(empRefreshBtn);
             panel1.Controls.Add(CB_Status);
             panel1.Controls.Add(statusLabel);
             panel1.Controls.Add(CB_Department);
@@ -357,13 +360,11 @@ namespace IUIS.Modules.Team6.Forms
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.ForeColor = Color.RosyBrown;
-            label3.Location = new Point(13, 281);
+            label3.BackColor = Color.RosyBrown;
+            label3.Location = new Point(13, 321);
             label3.Name = "label3";
-            label3.Size = new Size(202, 15);
+            label3.Size = new Size(211, 2);
             label3.TabIndex = 11;
-            label3.Text = "_______________________________________";
             label3.Click += label3_Click;
             // 
             // label2
@@ -371,7 +372,7 @@ namespace IUIS.Modules.Team6.Forms
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ControlLightLight;
-            label2.Location = new Point(22, 320);
+            label2.Location = new Point(22, 368);
             label2.Name = "label2";
             label2.Size = new Size(53, 41);
             label2.TabIndex = 10;
@@ -394,7 +395,7 @@ namespace IUIS.Modules.Team6.Forms
             totalRecordValueLabel.AutoSize = true;
             totalRecordValueLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             totalRecordValueLabel.ForeColor = SystemColors.ControlLightLight;
-            totalRecordValueLabel.Location = new Point(93, 338);
+            totalRecordValueLabel.Location = new Point(93, 386);
             totalRecordValueLabel.Name = "totalRecordValueLabel";
             totalRecordValueLabel.Size = new Size(23, 25);
             totalRecordValueLabel.TabIndex = 8;
@@ -406,7 +407,7 @@ namespace IUIS.Modules.Team6.Forms
             totalRecordsLabel.AutoSize = true;
             totalRecordsLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             totalRecordsLabel.ForeColor = SystemColors.ControlLightLight;
-            totalRecordsLabel.Location = new Point(86, 320);
+            totalRecordsLabel.Location = new Point(86, 368);
             totalRecordsLabel.Name = "totalRecordsLabel";
             totalRecordsLabel.Size = new Size(84, 15);
             totalRecordsLabel.TabIndex = 7;
@@ -426,10 +427,24 @@ namespace IUIS.Modules.Team6.Forms
             clearFilterButton.Text = "⟲ Clear Filters";
             clearFilterButton.UseVisualStyleBackColor = false;
             // 
+            // empRefreshBtn
+            // 
+            empRefreshBtn.BackColor = Color.FromArgb(255, 210, 44);
+            empRefreshBtn.FlatAppearance.BorderSize = 0;
+            empRefreshBtn.FlatStyle = FlatStyle.Flat;
+            empRefreshBtn.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            empRefreshBtn.ForeColor = Color.Black;
+            empRefreshBtn.Location = new Point(13, 277);
+            empRefreshBtn.Name = "empRefreshBtn";
+            empRefreshBtn.Size = new Size(211, 25);
+            empRefreshBtn.TabIndex = 20;
+            empRefreshBtn.Text = "🔄 Refresh";
+            empRefreshBtn.UseVisualStyleBackColor = false;
+            // 
             // CB_Status
             // 
             CB_Status.FormattingEnabled = true;
-            CB_Status.Location = new Point(13, 202);
+            CB_Status.Location = new Point(13, 201);
             CB_Status.Name = "CB_Status";
             CB_Status.Size = new Size(211, 23);
             CB_Status.TabIndex = 5;
@@ -439,7 +454,7 @@ namespace IUIS.Modules.Team6.Forms
             statusLabel.AutoSize = true;
             statusLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             statusLabel.ForeColor = SystemColors.ControlLightLight;
-            statusLabel.Location = new Point(13, 184);
+            statusLabel.Location = new Point(13, 175);
             statusLabel.Name = "statusLabel";
             statusLabel.Size = new Size(40, 15);
             statusLabel.TabIndex = 4;
@@ -449,7 +464,7 @@ namespace IUIS.Modules.Team6.Forms
             // 
             CB_Department.ForeColor = Color.Black;
             CB_Department.FormattingEnabled = true;
-            CB_Department.Location = new Point(13, 124);
+            CB_Department.Location = new Point(13, 141);
             CB_Department.Name = "CB_Department";
             CB_Department.Size = new Size(211, 23);
             CB_Department.TabIndex = 3;
@@ -459,7 +474,7 @@ namespace IUIS.Modules.Team6.Forms
             departmentLabel.AutoSize = true;
             departmentLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             departmentLabel.ForeColor = SystemColors.ControlLightLight;
-            departmentLabel.Location = new Point(13, 106);
+            departmentLabel.Location = new Point(13, 115);
             departmentLabel.Name = "departmentLabel";
             departmentLabel.Size = new Size(71, 15);
             departmentLabel.TabIndex = 2;
@@ -468,7 +483,7 @@ namespace IUIS.Modules.Team6.Forms
             // 
             // TB_Search
             // 
-            TB_Search.Location = new Point(13, 73);
+            TB_Search.Location = new Point(13, 81);
             TB_Search.Name = "TB_Search";
             TB_Search.PlaceholderText = " ⌕ Search by name, ID, position...";
             TB_Search.Size = new Size(211, 23);
@@ -546,8 +561,8 @@ namespace IUIS.Modules.Team6.Forms
             departmentsTab.Controls.Add(DGV_DepartmentList);
             departmentsTab.Location = new Point(4, 24);
             departmentsTab.Name = "departmentsTab";
-            departmentsTab.Padding = new Padding(3, 3, 3, 3);
-            departmentsTab.Size = new Size(974, 516);
+            departmentsTab.Padding = new Padding(3);
+            departmentsTab.Size = new Size(976, 520);
             departmentsTab.TabIndex = 1;
             departmentsTab.Text = "🏢 Departments";
             departmentsTab.UseVisualStyleBackColor = true;
@@ -666,6 +681,7 @@ namespace IUIS.Modules.Team6.Forms
             panel2.Controls.Add(totalDeptsValueLabel);
             panel2.Controls.Add(totalDeptsLabel);
             panel2.Controls.Add(clearDeptFilterButton);
+            panel2.Controls.Add(deptRefreshBtn);
             panel2.Controls.Add(CB_Location);
             panel2.Controls.Add(locationLabel);
             panel2.Controls.Add(TB_DeptSearch);
@@ -688,13 +704,11 @@ namespace IUIS.Modules.Team6.Forms
             // 
             // label8
             // 
-            label8.AutoSize = true;
-            label8.ForeColor = Color.RosyBrown;
-            label8.Location = new Point(11, 236);
+            label8.BackColor = Color.RosyBrown;
+            label8.Location = new Point(13, 321);
             label8.Name = "label8";
-            label8.Size = new Size(207, 15);
+            label8.Size = new Size(211, 2);
             label8.TabIndex = 11;
-            label8.Text = "________________________________________";
             label8.Click += label8_Click;
             // 
             // label7
@@ -710,7 +724,7 @@ namespace IUIS.Modules.Team6.Forms
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label6.ForeColor = SystemColors.ControlLightLight;
-            label6.Location = new Point(18, 272);
+            label6.Location = new Point(22, 368);
             label6.Name = "label6";
             label6.Size = new Size(67, 41);
             label6.TabIndex = 9;
@@ -722,7 +736,7 @@ namespace IUIS.Modules.Team6.Forms
             totalDeptsValueLabel.AutoSize = true;
             totalDeptsValueLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             totalDeptsValueLabel.ForeColor = SystemColors.ControlLightLight;
-            totalDeptsValueLabel.Location = new Point(95, 290);
+            totalDeptsValueLabel.Location = new Point(93, 386);
             totalDeptsValueLabel.Name = "totalDeptsValueLabel";
             totalDeptsValueLabel.Size = new Size(23, 25);
             totalDeptsValueLabel.TabIndex = 8;
@@ -733,7 +747,7 @@ namespace IUIS.Modules.Team6.Forms
             totalDeptsLabel.AutoSize = true;
             totalDeptsLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             totalDeptsLabel.ForeColor = SystemColors.ControlLightLight;
-            totalDeptsLabel.Location = new Point(92, 272);
+            totalDeptsLabel.Location = new Point(86, 368);
             totalDeptsLabel.Name = "totalDeptsLabel";
             totalDeptsLabel.Size = new Size(73, 15);
             totalDeptsLabel.TabIndex = 7;
@@ -745,17 +759,31 @@ namespace IUIS.Modules.Team6.Forms
             clearDeptFilterButton.FlatAppearance.BorderSize = 0;
             clearDeptFilterButton.FlatStyle = FlatStyle.Flat;
             clearDeptFilterButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            clearDeptFilterButton.Location = new Point(11, 188);
+            clearDeptFilterButton.Location = new Point(13, 247);
             clearDeptFilterButton.Name = "clearDeptFilterButton";
             clearDeptFilterButton.Size = new Size(211, 23);
             clearDeptFilterButton.TabIndex = 6;
             clearDeptFilterButton.Text = "⟲ Clear Filters";
             clearDeptFilterButton.UseVisualStyleBackColor = false;
             // 
+            // deptRefreshBtn
+            // 
+            deptRefreshBtn.BackColor = Color.FromArgb(255, 210, 44);
+            deptRefreshBtn.FlatAppearance.BorderSize = 0;
+            deptRefreshBtn.FlatStyle = FlatStyle.Flat;
+            deptRefreshBtn.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            deptRefreshBtn.ForeColor = Color.Black;
+            deptRefreshBtn.Location = new Point(13, 277);
+            deptRefreshBtn.Name = "deptRefreshBtn";
+            deptRefreshBtn.Size = new Size(211, 23);
+            deptRefreshBtn.TabIndex = 21;
+            deptRefreshBtn.Text = "🔄 Refresh";
+            deptRefreshBtn.UseVisualStyleBackColor = false;
+            // 
             // CB_Location
             // 
             CB_Location.FormattingEnabled = true;
-            CB_Location.Location = new Point(12, 134);
+            CB_Location.Location = new Point(13, 141);
             CB_Location.Name = "CB_Location";
             CB_Location.Size = new Size(211, 23);
             CB_Location.TabIndex = 3;
@@ -765,7 +793,7 @@ namespace IUIS.Modules.Team6.Forms
             locationLabel.AutoSize = true;
             locationLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             locationLabel.ForeColor = SystemColors.ControlLightLight;
-            locationLabel.Location = new Point(12, 106);
+            locationLabel.Location = new Point(13, 115);
             locationLabel.Name = "locationLabel";
             locationLabel.Size = new Size(53, 15);
             locationLabel.TabIndex = 2;
@@ -774,7 +802,7 @@ namespace IUIS.Modules.Team6.Forms
             // 
             // TB_DeptSearch
             // 
-            TB_DeptSearch.Location = new Point(12, 73);
+            TB_DeptSearch.Location = new Point(13, 81);
             TB_DeptSearch.Name = "TB_DeptSearch";
             TB_DeptSearch.PlaceholderText = " ⌕ Search by name or location...";
             TB_DeptSearch.Size = new Size(211, 23);
@@ -785,7 +813,7 @@ namespace IUIS.Modules.Team6.Forms
             deptSearchLabel.AutoSize = true;
             deptSearchLabel.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             deptSearchLabel.ForeColor = SystemColors.ControlLightLight;
-            deptSearchLabel.Location = new Point(11, 55);
+            deptSearchLabel.Location = new Point(13, 55);
             deptSearchLabel.Name = "deptSearchLabel";
             deptSearchLabel.Size = new Size(43, 15);
             deptSearchLabel.TabIndex = 0;
@@ -846,8 +874,8 @@ namespace IUIS.Modules.Team6.Forms
             attendanceTab.Controls.Add(attFilterPanel);
             attendanceTab.Location = new Point(4, 24);
             attendanceTab.Name = "attendanceTab";
-            attendanceTab.Padding = new Padding(3, 3, 3, 3);
-            attendanceTab.Size = new Size(974, 516);
+            attendanceTab.Padding = new Padding(3);
+            attendanceTab.Size = new Size(976, 520);
             attendanceTab.TabIndex = 2;
             attendanceTab.Text = "🗓️ Attendance";
             attendanceTab.UseVisualStyleBackColor = true;
@@ -1122,8 +1150,8 @@ namespace IUIS.Modules.Team6.Forms
             reportsTab.Controls.Add(reportFiltersPanel);
             reportsTab.Location = new Point(4, 24);
             reportsTab.Name = "reportsTab";
-            reportsTab.Padding = new Padding(3, 3, 3, 3);
-            reportsTab.Size = new Size(974, 516);
+            reportsTab.Padding = new Padding(3);
+            reportsTab.Size = new Size(976, 520);
             reportsTab.TabIndex = 3;
             reportsTab.Text = "📊 Reports";
             reportsTab.UseVisualStyleBackColor = true;
@@ -1566,6 +1594,8 @@ namespace IUIS.Modules.Team6.Forms
         private Label label10;
         private Label label11;
         private Label label12;
+        private Button empRefreshBtn;
+        private Button deptRefreshBtn;
     }
 }
 

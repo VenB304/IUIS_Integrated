@@ -76,6 +76,7 @@ namespace IUIS.Modules.Team6.Forms
         protected override async void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
+            DTP_AttDate.MaxDate = DateTime.Today;
             WireEvents();
             await LoadAllDataAsync();
         }
@@ -96,57 +97,8 @@ namespace IUIS.Modules.Team6.Forms
             }
 
             // ── Refresh buttons ──
-            // Size and position are derived from the existing clearFilterButton so they
-            // automatically inherit the correct DPI-scaled dimensions and alignment.
-
-            // Hide the underscore separator labels so the Refresh buttons have clean space.
-            label3.Visible = false; // Employee panel separator
-            label8.Visible = false; // Department panel separator
-
-            var empRefreshBtn = new Button
-            {
-                Text = "🔄 Refresh",
-                Location = new Point(clearFilterButton.Left, clearFilterButton.Bottom + 5),
-                Size = clearFilterButton.Size,
-                BackColor = Color.FromArgb(255, 210, 44),
-                ForeColor = Color.Black,
-                Font = clearFilterButton.Font,
-                UseVisualStyleBackColor = false
-            };
             empRefreshBtn.Click += async (s, e) => await LoadEmployeesAsync();
-            panel1.Controls.Add(empRefreshBtn);
-
-            var deptRefreshBtn = new Button
-            {
-                Text = "🔄 Refresh",
-                Location = new Point(clearDeptFilterButton.Left, clearDeptFilterButton.Bottom + 5),
-                Size = clearDeptFilterButton.Size,
-                BackColor = Color.FromArgb(255, 210, 44),
-                ForeColor = Color.Black,
-                Font = clearDeptFilterButton.Font,
-                UseVisualStyleBackColor = false
-            };
             deptRefreshBtn.Click += async (s, e) => await LoadDepartmentsAsync();
-            panel2.Controls.Add(deptRefreshBtn);
-
-            // ── Visual separator lines between filter controls and totals section ──
-            // Anchored to the emoji labels (label2 / label6) so position scales correctly
-            // with DPI. Uses the same gold accent as the filter buttons.
-            var empSeparator = new Panel
-            {
-                Location = new Point(clearFilterButton.Left, label2.Top - 12),
-                Size = new Size(clearFilterButton.Width, 2),
-                BackColor = Color.FromArgb(255, 210, 100),
-            };
-            panel1.Controls.Add(empSeparator);
-
-            var deptSeparator = new Panel
-            {
-                Location = new Point(clearDeptFilterButton.Left, label6.Top - 12),
-                Size = new Size(clearDeptFilterButton.Width, 2),
-                BackColor = Color.FromArgb(255, 210, 100),
-            };
-            panel2.Controls.Add(deptSeparator);
 
             // Employee Tab
             TB_Search.TextChanged += (s, e) => FilterEmployees();
@@ -324,6 +276,8 @@ namespace IUIS.Modules.Team6.Forms
         {
             _filteredEmployees = source;
 
+            DGV_EmployeeList.SelectionChanged -= DGV_EmployeeList_SelectionChanged;
+
             DGV_EmployeeList.DataSource = source.Select(e => new
             {
                 EmpID = e.EmployeeId,
@@ -334,9 +288,12 @@ namespace IUIS.Modules.Team6.Forms
             }).ToList();
 
             totalRecordValueLabel.Text = source.Count.ToString();
+            DGV_EmployeeList.ClearSelection();
             DGV_EmployeeQuickDetails.DataSource = null;
             _selectedEmployee = null;
             SetEmployeeButtons(false);
+
+            DGV_EmployeeList.SelectionChanged += DGV_EmployeeList_SelectionChanged;
         }
 
         private void FilterEmployees()
@@ -542,6 +499,8 @@ namespace IUIS.Modules.Team6.Forms
         {
             _filteredDepartments = source;
 
+            DGV_DepartmentList.SelectionChanged -= DGV_DepartmentList_SelectionChanged;
+
             var empCounts = _employees
                 .Where(e => !string.IsNullOrEmpty(e.DepartmentId))
                 .GroupBy(e => e.DepartmentId)
@@ -557,9 +516,12 @@ namespace IUIS.Modules.Team6.Forms
             }).ToList();
 
             totalDeptsValueLabel.Text = source.Count.ToString();
+            DGV_DepartmentList.ClearSelection();
             DGV_DepartmentQuickDetails.DataSource = null;
             _selectedDepartment = null;
             SetDepartmentButtons(false);
+
+            DGV_DepartmentList.SelectionChanged += DGV_DepartmentList_SelectionChanged;
         }
 
         private void FilterDepartments()
@@ -744,6 +706,8 @@ namespace IUIS.Modules.Team6.Forms
         {
             _filteredAttendance = source;
 
+            DGV_AttendanceList.SelectionChanged -= DGV_AttendanceList_SelectionChanged;
+
             DGV_AttendanceList.DataSource = source.Select(r => new
             {
                 EmpID = r.EmployeeId,
@@ -759,8 +723,11 @@ namespace IUIS.Modules.Team6.Forms
             summaryAbsentLabel.Text = $"Absent: {source.Count(r => r.Status == "Absent")}";
             summaryOnLeaveLabel.Text = $"On Leave: {source.Count(r => r.Status == "On Leave")}";
 
+            DGV_AttendanceList.ClearSelection();
             _selectedAttendance = null;
             recordTimeOutButton.Enabled = false;
+
+            DGV_AttendanceList.SelectionChanged += DGV_AttendanceList_SelectionChanged;
         }
 
         private void FilterAttendance()
@@ -815,6 +782,13 @@ namespace IUIS.Modules.Team6.Forms
 
         private async Task RecordTimeInAsync()
         {
+            if (DTP_AttDate.Value.Date > DateTime.Today)
+            {
+                MessageBox.Show("Cannot record attendance for a future date.",
+                    "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             var active = _employees.Where(e => e.EmploymentStatus == "Active").ToList();
             if (active.Count == 0)
             {
@@ -915,6 +889,13 @@ namespace IUIS.Modules.Team6.Forms
 
         private async Task MarkAbsentOrLeaveAsync()
         {
+            if (DTP_AttDate.Value.Date > DateTime.Today)
+            {
+                MessageBox.Show("Cannot record attendance/leave for a future date.",
+                    "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             var active = _employees.Where(e => e.EmploymentStatus == "Active").ToList();
             if (active.Count == 0) { ShowInfo("No active employees found."); return; }
 
@@ -1066,6 +1047,13 @@ namespace IUIS.Modules.Team6.Forms
 
         private async Task GenerateReportAsync()
         {
+            if (DTP_DateFrom.Value.Date > DTP_DateTo.Value.Date)
+            {
+                MessageBox.Show("Start Date ('Date From') cannot be after End Date ('Date To').",
+                    "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             try
             {
                 SetStatus("Generating report…");
