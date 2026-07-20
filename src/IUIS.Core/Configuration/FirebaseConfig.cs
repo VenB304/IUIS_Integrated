@@ -97,8 +97,11 @@ namespace IUIS.Core.Configuration
 
         /// <summary>
         /// Looks for the config beside the executable first (the normal case),
-        /// then walks up the tree — which is what makes `dotnet run` and the
-        /// test runner work without copying the file into every output folder.
+        /// then walks up the directory tree — which is what makes <c>dotnet run</c> and
+        /// the test runner work without copying the file into every output folder.
+        /// The explicit nested check targets the Team 6 submodule folder
+        /// (<c>src/Modules/IUIS.Modules.Team6/</c>), which is where the setup
+        /// script drops the credential file.
         /// </summary>
         private static string? Resolve()
         {
@@ -111,7 +114,7 @@ namespace IUIS.Core.Configuration
                 var candidate = Path.Combine(dir.FullName, FileName);
                 if (File.Exists(candidate)) return candidate;
 
-                var nested = Path.Combine(dir.FullName, "src", "IUIS.Core", "Configuration", FileName);
+                var nested = Path.Combine(dir.FullName, "src", "Modules", "IUIS.Modules.Team6", FileName);
                 if (File.Exists(nested)) return nested;
 
                 dir = dir.Parent;
