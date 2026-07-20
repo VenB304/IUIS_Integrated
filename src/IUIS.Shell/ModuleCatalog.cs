@@ -1,6 +1,5 @@
 using IUIS.Core.Modules;
 using IUIS.Modules.Team6;
-using IUIS.Modules.Team8;
 
 namespace IUIS.Shell
 {
@@ -72,8 +71,12 @@ namespace IUIS.Shell
                     exeName:    "csharp-crud-json.exe",
                     framework:  "net8.0-windows"))
 
-                // Team 8 — converted to an in-process module.
-                .Register(new Team8Module());
+                // Team 8 — repo: IUIS.Modules.Team8, exe: EnrollmentApp.exe
+                .Register(ExternalTeamNamed(8, "Enrollment Management",
+                    "Manage student enrollment and tuition assessment", "📝",
+                    repoFolder: "IUIS.Modules.Team8",
+                    exeName:    "EnrollmentApp.exe",
+                    framework:  "net10.0-windows"));
 
             return registry;
         }

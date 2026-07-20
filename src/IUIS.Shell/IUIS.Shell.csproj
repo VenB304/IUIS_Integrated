@@ -19,7 +19,6 @@
       class library, add their reference here and register them in ModuleCatalog.
     -->
     <ProjectReference Include="..\Modules\IUIS.Modules.Team6\IUIS.Modules.Team6.csproj" />
-    <ProjectReference Include="..\Modules\IUIS.Modules.Team8\IUIS.Modules.Team8.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -85,6 +84,11 @@
     <Message Text="[IUIS] Building Team 7 — Medical Services..." Importance="high" />
     <Exec
       Command="dotnet build &quot;$(MSBuildThisFileDirectory)..\Modules\IUIS.Modules.Team7\csharp-crud-json.csproj&quot; --configuration $(Configuration) --verbosity quiet"
+      ContinueOnError="true" />
+
+    <Message Text="[IUIS] Building Team 8 — Enrollment Management..." Importance="high" />
+    <Exec
+      Command="dotnet build &quot;$(MSBuildThisFileDirectory)..\Modules\IUIS.Modules.Team8\EnrollmentApp.csproj&quot; --configuration $(Configuration) --verbosity quiet"
       ContinueOnError="true" />
 
   </Target>

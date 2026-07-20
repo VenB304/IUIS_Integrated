@@ -16,3 +16,6 @@
 [submodule "src/Modules/IUIS.Modules.Team7"]
 	path = src/Modules/IUIS.Modules.Team7
 	url = https://github.com/samsonjeff/csharp-crud-json
+[submodule "src/Modules/IUIS.Modules.Team8"]
+	path = src/Modules/IUIS.Modules.Team8
+	url = https://github.com/codeWithAmben/project102

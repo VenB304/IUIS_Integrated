@@ -2,5 +2,4 @@
   <Project Path="src/IUIS.Core/IUIS.Core.csproj" />
   <Project Path="src/IUIS.Shell/IUIS.Shell.csproj" DefaultStartup="true" />
   <Project Path="src/Modules/IUIS.Modules.Team6/IUIS.Modules.Team6.csproj" />
-  <Project Path="src/Modules/IUIS.Modules.Team8/IUIS.Modules.Team8.csproj" />
 </Solution>
