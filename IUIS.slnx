@@ -1,26 +1,12 @@
 <Solution>
-  <Project Path="src/IUIS.Core/IUIS.Core.csproj"
-           DisplayName="IUIS Core" />
-  <Project Path="src/IUIS.Shell/IUIS.Shell.csproj"
-           DisplayName="IUIS Shell"
-           DefaultStartup="true" />
-
-  <Folder Name="Modules">
-    <Project Path="src/Modules/IUIS.Modules.Team1/Team1_Final_Project/Team1_Final_Project.csproj"
-             DisplayName="Team 1 — Student Management" />
-    <Project Path="src/Modules/IUIS.Modules.Team2/Teacher_Management/Teacher_Management.csproj"
-             DisplayName="Team 2 — Teacher Management" />
-    <Project Path="src/Modules/IUIS.Modules.Team3/AcademicManagement/AcademicManagement.csproj"
-             DisplayName="Team 3 — Academic Management" />
-    <Project Path="src/Modules/IUIS.Modules.Team4/RegistrarManagement.csproj"
-             DisplayName="Team 4 — Registrar Management" />
-    <Project Path="src/Modules/IUIS.Modules.Team5/LibraryManagementSystem.csproj"
-             DisplayName="Team 5 — Library Management" />
-    <Project Path="src/Modules/IUIS.Modules.Team6/IUIS.Modules.Team6.csproj"
-             DisplayName="Team 6 — Employee &amp; Attendance" />
-    <Project Path="src/Modules/IUIS.Modules.Team7/csharp-crud-json.csproj"
-             DisplayName="Team 7 — Medical Services" />
-    <Project Path="src/Modules/IUIS.Modules.Team8/EnrollmentApp.csproj"
-             DisplayName="Team 8 — Enrollment" />
-  </Folder>
+  <Project Path="src/IUIS.Core/IUIS.Core.csproj" />
+  <Project Path="src/IUIS.Shell/IUIS.Shell.csproj" DefaultStartup="true" />
+  <Project Path="src/Modules/IUIS.Modules.Team1/Team1_Final_Project/Team1_Final_Project.csproj" />
+  <Project Path="src/Modules/IUIS.Modules.Team2/Teacher_Management/Teacher_Management.csproj" />
+  <Project Path="src/Modules/IUIS.Modules.Team3/AcademicManagement/AcademicManagement.csproj" />
+  <Project Path="src/Modules/IUIS.Modules.Team4/RegistrarManagement.csproj" />
+  <Project Path="src/Modules/IUIS.Modules.Team5/LibraryManagementSystem.csproj" />
+  <Project Path="src/Modules/IUIS.Modules.Team6/IUIS.Modules.Team6.csproj" />
+  <Project Path="src/Modules/IUIS.Modules.Team7/csharp-crud-json.csproj" />
+  <Project Path="src/Modules/IUIS.Modules.Team8/EnrollmentApp.csproj" />
 </Solution>
