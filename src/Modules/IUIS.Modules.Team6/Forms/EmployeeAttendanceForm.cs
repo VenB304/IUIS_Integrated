@@ -84,6 +84,8 @@ namespace IUIS.Modules.Team6.Forms
 
         private void WireEvents()
         {
+            SetupButtonAppearances();
+
             // Make every DataGridView select the full row on any cell click
             foreach (DataGridView dgv in new[] {
                 DGV_EmployeeList, DGV_DepartmentList, DGV_AttendanceList, DGV_ReportList })
@@ -184,6 +186,56 @@ namespace IUIS.Modules.Team6.Forms
             exportCSVButton.Click += ExportToCSV;
             DGV_ReportList.ColumnHeaderMouseClick += DGV_ReportList_ColumnHeaderMouseClick;
         }
+
+        private void SetupButtonAppearances()
+        {
+            // Set explicit foreground colors to prevent inheriting parent styles
+            clearDeptFilterButton.ForeColor = Color.Black;
+            exportCSVButton.ForeColor = Color.Black;
+
+            void ConfigureDynamicButton(Button btn, Color enabledBack, Color enabledFore)
+            {
+                btn.FlatStyle = FlatStyle.Flat;
+                btn.FlatAppearance.BorderSize = 0;
+                btn.Tag = (enabledBack, enabledFore);
+
+                // Initialize with current enabled state
+                ApplyDynamicButtonStyle(btn);
+
+                // Register event handler to update when Enabled changes
+                btn.EnabledChanged += (s, e) => ApplyDynamicButtonStyle(btn);
+            }
+
+            // Configure all custom styled buttons that change enabled states dynamically
+            ConfigureDynamicButton(viewEmployeeDetailsButton, Color.FromArgb(55, 65, 81), SystemColors.ControlLightLight);
+            ConfigureDynamicButton(deleteEmployeeButton, Color.FromArgb(176, 0, 26), SystemColors.ControlLightLight);
+            ConfigureDynamicButton(editEmployeeButton, Color.FromArgb(255, 185, 44), Color.Black);
+
+            ConfigureDynamicButton(deleteDepartmentButton, Color.FromArgb(176, 0, 26), SystemColors.ControlLightLight);
+            ConfigureDynamicButton(editDepartmentButton, Color.FromArgb(255, 185, 44), Color.Black);
+
+            ConfigureDynamicButton(recordTimeOutButton, Color.FromArgb(255, 185, 44), Color.Black);
+        }
+
+        private void ApplyDynamicButtonStyle(Button btn)
+        {
+            if (btn.Tag is (Color enabledBack, Color enabledFore))
+            {
+                if (btn.Enabled)
+                {
+                    btn.BackColor = enabledBack;
+                    btn.ForeColor = enabledFore;
+                }
+                else
+                {
+                    // Modern muted colors for disabled buttons:
+                    // Soft light-gray background with a muted gray text to ensure high contrast and clear readability
+                    btn.BackColor = Color.FromArgb(229, 231, 235); // Gray-200
+                    btn.ForeColor = Color.FromArgb(156, 163, 175); // Gray-400
+                }
+            }
+        }
+
 
         // ── Initial load ──────────────────────────────────────────────────
 
