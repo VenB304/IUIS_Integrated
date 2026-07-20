@@ -1,18 +1,18 @@
-[submodule "modules/RegistrarManagement"]
-	path = src/Modules/RegistrarManagement
-	url = https://github.com/kurtvergara06-rgb/RegistrarManagement
-[submodule "modules/library-management-module"]
-	path = src/Modules/library-management-module
-	url = https://github.com/scoop23/library-management-module
-[submodule "modules/Team1_StudentManagementModule"]
-	path = src/Modules/Team1_StudentManagementModule
+[submodule "src/Modules/IUIS.Modules.Team1"]
+	path = src/Modules/IUIS.Modules.Team1
 	url = https://github.com/Chiharu19/Team1_StudentManagementModule
-[submodule "modules/Team2_Teacher_Management"]
-	path = src/Modules/Team2_Teacher_Management
+[submodule "src/Modules/IUIS.Modules.Team2"]
+	path = src/Modules/IUIS.Modules.Team2
 	url = https://github.com/jomar999/Team2_Teacher_Management
-[submodule "modules/AcademicManagementSystem"]
-	path = src/Modules/AcademicManagementSystem
+[submodule "src/Modules/IUIS.Modules.Team3"]
+	path = src/Modules/IUIS.Modules.Team3
 	url = https://github.com/Yelsha111/AcademicManagementSystem
+[submodule "src/Modules/IUIS.Modules.Team4"]
+	path = src/Modules/IUIS.Modules.Team4
+	url = https://github.com/kurtvergara06-rgb/RegistrarManagement
+[submodule "src/Modules/IUIS.Modules.Team5"]
+	path = src/Modules/IUIS.Modules.Team5
+	url = https://github.com/scoop23/library-management-module
 [submodule "src/Modules/IUIS.Modules.Team7"]
 	path = src/Modules/IUIS.Modules.Team7
 	url = https://github.com/samsonjeff/csharp-crud-json

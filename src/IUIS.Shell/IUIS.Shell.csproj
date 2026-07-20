@@ -48,37 +48,37 @@
 
     <Message Text="[IUIS] Building Team 1 — Student Management..." Importance="high" />
     <Exec
-      Command="dotnet build &quot;$(MSBuildThisFileDirectory)..\Modules\Team1_StudentManagementModule\Team1_Final_Project\Team1_Final_Project.csproj&quot; --configuration $(Configuration) --verbosity quiet"
+      Command="dotnet build &quot;$(MSBuildThisFileDirectory)..\Modules\IUIS.Modules.Team1\Team1_Final_Project\Team1_Final_Project.csproj&quot; --configuration $(Configuration) --verbosity quiet"
       ContinueOnError="true" />
 
     <Message Text="[IUIS] Building Team 2 — Teacher Management..." Importance="high" />
     <Exec
-      Command="dotnet build &quot;$(MSBuildThisFileDirectory)..\Modules\Team2_Teacher_Management\Teacher_Management\Teacher_Management.csproj&quot; --configuration $(Configuration) --verbosity quiet"
+      Command="dotnet build &quot;$(MSBuildThisFileDirectory)..\Modules\IUIS.Modules.Team2\Teacher_Management\Teacher_Management.csproj&quot; --configuration $(Configuration) --verbosity quiet"
       ContinueOnError="true" />
 
     <Message Text="[IUIS] Building Team 3 — Academic Management..." Importance="high" />
     <Exec
-      Command="dotnet build &quot;$(MSBuildThisFileDirectory)..\Modules\AcademicManagementSystem\AcademicManagement\AcademicManagement.csproj&quot; --configuration $(Configuration) --verbosity quiet"
+      Command="dotnet build &quot;$(MSBuildThisFileDirectory)..\Modules\IUIS.Modules.Team3\AcademicManagement\AcademicManagement.csproj&quot; --configuration $(Configuration) --verbosity quiet"
       ContinueOnError="true" />
 
     <Message Text="[IUIS] Building Team 4 — Registrar Management..." Importance="high" />
     <Exec
-      Command="dotnet build &quot;$(MSBuildThisFileDirectory)..\Modules\RegistrarManagement\RegistrarManagement.csproj&quot; --configuration $(Configuration) --verbosity quiet"
+      Command="dotnet build &quot;$(MSBuildThisFileDirectory)..\Modules\IUIS.Modules.Team4\RegistrarManagement.csproj&quot; --configuration $(Configuration) --verbosity quiet"
       ContinueOnError="true" />
 
     <Message Text="[IUIS] Building Team 5 — Library Management..." Importance="high" />
     <Copy
-      SourceFiles="$(MSBuildThisFileDirectory)..\Modules\library-management-module\Configurations\service-account.example.json"
-      DestinationFiles="$(MSBuildThisFileDirectory)..\Modules\library-management-module\Configurations\service-account.json"
-      Condition="!Exists('$(MSBuildThisFileDirectory)..\Modules\library-management-module\Configurations\service-account.json')"
+      SourceFiles="$(MSBuildThisFileDirectory)..\Modules\IUIS.Modules.Team5\Configurations\service-account.example.json"
+      DestinationFiles="$(MSBuildThisFileDirectory)..\Modules\IUIS.Modules.Team5\Configurations\service-account.json"
+      Condition="!Exists('$(MSBuildThisFileDirectory)..\Modules\IUIS.Modules.Team5\Configurations\service-account.json')"
       ContinueOnError="true" />
     <Copy
-      SourceFiles="$(MSBuildThisFileDirectory)..\Modules\library-management-module\Configurations\service-account.example.json"
-      DestinationFiles="$(MSBuildThisFileDirectory)..\Modules\library-management-module\Configurations\it332-service-account.json"
-      Condition="!Exists('$(MSBuildThisFileDirectory)..\Modules\library-management-module\Configurations\it332-service-account.json')"
+      SourceFiles="$(MSBuildThisFileDirectory)..\Modules\IUIS.Modules.Team5\Configurations\service-account.example.json"
+      DestinationFiles="$(MSBuildThisFileDirectory)..\Modules\IUIS.Modules.Team5\Configurations\it332-service-account.json"
+      Condition="!Exists('$(MSBuildThisFileDirectory)..\Modules\IUIS.Modules.Team5\Configurations\it332-service-account.json')"
       ContinueOnError="true" />
     <Exec
-      Command="dotnet build &quot;$(MSBuildThisFileDirectory)..\Modules\library-management-module\LibraryManagementSystem.csproj&quot; --configuration $(Configuration) --verbosity quiet"
+      Command="dotnet build &quot;$(MSBuildThisFileDirectory)..\Modules\IUIS.Modules.Team5\LibraryManagementSystem.csproj&quot; --configuration $(Configuration) --verbosity quiet"
       ContinueOnError="true" />
 
     <Message Text="[IUIS] Building Team 7 — Medical Services..." Importance="high" />

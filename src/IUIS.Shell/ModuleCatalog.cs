@@ -26,38 +26,38 @@ namespace IUIS.Shell
             var registry = new ModuleRegistry();
 
             registry
-                // Team 1 — repo: Team1_StudentManagementModule, project subfolder: Team1_Final_Project
+                // Team 1 — repo: IUIS.Modules.Team1, project subfolder: Team1_Final_Project
                 .Register(ExternalTeamNamed(1, "Student Management",
                     "Manage student profiles and personal information", "🎓",
-                    repoFolder:   "Team1_StudentManagementModule",
+                    repoFolder:   "IUIS.Modules.Team1",
                     exeName:      "Team1_Final_Project.exe",
                     framework:    "net10.0-windows",
                     nestedFolder: "Team1_Final_Project"))
-                // Team 2 — private repo: Team2_Teacher_Management, modernized to net8.0-windows
+                // Team 2 — private repo: IUIS.Modules.Team2, modernized to net8.0-windows
                 .Register(ExternalTeamNamed(2, "Teacher Management",
                     "Manage faculty information and subject assignments", "👨‍🏫",
-                    repoFolder:   "Team2_Teacher_Management",
+                    repoFolder:   "IUIS.Modules.Team2",
                     exeName:      "Teacher_Management.exe",
                     nestedFolder: "Teacher_Management",
                     framework:    "net8.0-windows"))
-                // Team 3 — repo: AcademicManagementSystem, project subfolder: AcademicManagement
+                // Team 3 — repo: IUIS.Modules.Team3, project subfolder: AcademicManagement
                 .Register(ExternalTeamNamed(3, "Academic Management",
                     "Manage programs, courses, subjects, and curriculum", "📖",
-                    repoFolder:   "AcademicManagementSystem",
+                    repoFolder:   "IUIS.Modules.Team3",
                     exeName:      "AcademicManagement.exe",
                     framework:    "net10.0-windows",
                     nestedFolder: "AcademicManagement"))
-                // Team 4 — repo: RegistrarManagement, exe: RegistrarManagement.exe
+                // Team 4 — repo: IUIS.Modules.Team4, exe: RegistrarManagement.exe
                 .Register(ExternalTeamNamed(4, "Registrar Management",
                     "Manage academic records and student clearances", "🏛️",
-                    repoFolder: "RegistrarManagement",
+                    repoFolder: "IUIS.Modules.Team4",
                     exeName:    "RegistrarManagement.exe",
                     framework:  "net8.0-windows"))
 
-                // Team 5 — repo: library-management-module, exe: LibraryManagementSystem.exe
+                // Team 5 — repo: IUIS.Modules.Team5, exe: LibraryManagementSystem.exe
                 .Register(ExternalTeamNamed(5, "Library Management",
                     "Manage book inventory and borrowing history", "📚",
-                    repoFolder: "library-management-module",
+                    repoFolder: "IUIS.Modules.Team5",
                     exeName:    "LibraryManagementSystem.exe",
                     framework:  "net8.0-windows"))
 
